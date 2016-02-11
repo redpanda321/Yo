@@ -8,7 +8,7 @@
     "path": "./typings",
     "installed": {
         "angularjs/angular.d.ts": {
-            "commit": "0dd29bf8253536ae24e61c109524e924ea510046"
+            "commit": "5c9d364977256658c6b5274e12ff025994295861"
         },
         "jquery/jquery.d.ts": {
             "commit": "0dd29bf8253536ae24e61c109524e924ea510046"

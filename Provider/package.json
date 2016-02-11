@@ -23,5 +23,9 @@
     "require-dir": "^0.3.0",
     "run-sequence": "~1.0.1"
   },
-  "main": "gulpfile.js"
+  "main": "gulpfile.js",
+  "cordovaPlugins": [],
+  "cordovaPlatforms": [
+    "android"
+  ]
 }

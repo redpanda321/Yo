@@ -23,5 +23,12 @@
     "require-dir": "^0.3.0",
     "run-sequence": "~1.0.1"
   },
-  "main": "gulpfile.js"
+  "main": "gulpfile.js",
+  "cordovaPlugins": [
+    {
+      "locator": "https://github.com/apache/cordova-plugin-whitelist.git",
+      "id": "cordova-plugin-whitelist"
+    }
+  ],
+  "cordovaPlatforms": []
 }
