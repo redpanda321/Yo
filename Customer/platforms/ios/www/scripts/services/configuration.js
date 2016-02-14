@@ -8,7 +8,7 @@ angular.module('itaxiApp')
             defaultPass: 'defaultPassword',
             name: 'Taxi Go',
             //apiHost: 'http://taxigo.vn:9989',
-            apiHost: 'http://192.168.100.174:6868',
+            apiHost: 'http://localhost:6868',
             mediaHost: 'http://nodejs.vn:9697',
             isLogin: false
         };
