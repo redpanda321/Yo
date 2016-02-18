@@ -1,7 +1,8 @@
 <ion-modal-view>
     <ion-header-bar class="bar-energized">
-        <h1 class="title">Thông tin</h1>
-        <button class="button button-clear button-primary" ng-click="closeModalInput()">Quay lại</button>
+        <h1 class="title">Information</h1>
+        <button class="button button-clear button-primary" ng-click="closeModalInput()">
+            Come back</button>
     </ion-header-bar>
     <ion-content style="background: #fff;width: 100%;">
         <div class="content-modal">
@@ -18,12 +19,12 @@
 
                                         <input type="text" class="form-control" id="originInput" select-on-click
                                                ng-model="startPoint" ng-change="inputOnChange('originInput')"
-                                               ng-focus="onFocus('originInput')" placeholder="Nhập điểm hiện tại">
+                                               ng-focus="onFocus('originInput')" placeholder="Enter now">
 
 
                                     </label>
                                     <button class="button button-small">
-                                        Tìm kiếm
+                                        Search
                                     </button>
                                 </div>
 
@@ -55,7 +56,7 @@
 
 
                                         <input type="text" class="form-control" id="destinationInput" select-on-click
-                                               placeholder="Nhập điểm đến của bạn" ng-model="destinationInput"
+                                               placeholder="Enter your destination" ng-model="destinationInput"
                                                ng-change="inputOnChange('destinationInput')" ng-focus="onFocus('destinationInput')"
                                                >
 
@@ -86,7 +87,7 @@
 
 
                 <ion-slide>
-                    <div class="box yellow"><h5 style="margin-top: 20px;">địa điểm hay đi</h5>
+                    <div class="box yellow"><h5 style="margin-top: 20px;">or travel locations</h5>
                         <li class="item item-checkbox" ng-repeat="place in listHistory" >
 
                             <a ng-click="selectAdd(place);closeModalInput()">
@@ -105,11 +106,11 @@
         <div class="tabs tabs-icon-top tab-footer-input bar-balanced">
             <a class="tab-item" ng-class="classRouter1" ng-click="slideOne()">
                 <i class="icon ion-flag"></i>
-                Điểm hiện tại
+                Current Score
             </a>
             <a ng-click="slideTwo()" class="tab-item" ng-class="classRouter2">
                 <i class="icon ion-flag"></i>
-                Điểm đến
+                Destination
             </a>
             <a ng-click="slideThree()" class="tab-item" ng-class="classRouter3">
                 <i class="icon ion-model-s"></i>

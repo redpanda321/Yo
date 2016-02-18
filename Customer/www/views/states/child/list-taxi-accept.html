@@ -6,7 +6,8 @@ background-color: #6c3;
 margin: 0;
 padding: 5px;
 font-size: 13px;
-color: #fff;">Không có taxi nào trong khu vực <br> chấp nhận yêu cầu!.</p>
+color: #fff;">There are no taxis in the area <br>
+            accept requests !.</p>
 
         <div class="taxi-accept" ng-if="$stateParams.hasTaxi == 'true'">
             <div class="list">
@@ -15,7 +16,7 @@ color: #fff;">Không có taxi nào trong khu vực <br> chấp nhận yêu cầu
 
                     <h2 ng-click="goToPage('app.driverInfo',{id : taxi.id})">{{taxi.fullname}} </h2>
 
-                    <p ng-click="goToPage('app.driverInfo',{id : taxi.id})">Hãng: {{taxi.company.companyName}}</p>
+                    <p ng-click="goToPage('app.driverInfo',{id : taxi.id})">Groin: {{taxi.company.companyName}}</p>
                     <button class="button button-positive" ng-click="showConfirmCall(taxi)"
                             ng-disabled="status.callTaxiProcess"><i class="ion-android-call"></i></button>
                 </a>

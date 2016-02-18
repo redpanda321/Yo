@@ -7,7 +7,7 @@
             margin: 0;
             padding: 5px;
             font-size: 13px;
-            color: #fff;">Bạn chưa có lộ trình nào !</p>
+            color: #fff;">You do not have any schedule!</p>
 
         <div ng-show="checkHistory" class="list">
 
@@ -16,8 +16,8 @@
 
                     <p class="distance"> {{history.distance / 1000}} km </p></div>
 
-                <h2>Đi: {{history.startPoint}}</h2>
-                <h2>Đến: {{history.endPoint}}</h2>
+                <h2>Aunt: {{history.startPoint}}</h2>
+                <h2>Come: {{history.endPoint}}</h2>
 
                 <p style="font-size: 12px;">{{history.startAt | amCalendar }} <!--<strong>đến</strong>  {{history.endAt | amCalendar }}--></p>
             </a>

@@ -1,9 +1,9 @@
-<ion-view title="Danh sách taxi">
+<ion-view title="List of taxi">
     <ion-content>
 
         <ion-refresher on-refresh="doRefresh()"
-                       pulling-text="Kéo xuống để cập nhật..."
-                       refreshing-text="Cập nhật danh sách!"
+                       pulling-text="Pull down to update ..."
+                       refreshing-text="updating the list!"
                        refreshing-icon="ion-loading-c"
                        class="refresher">
         </ion-refresher>
@@ -24,14 +24,14 @@
                                         style="color: rgb(28, 235, 226);float:right;margin-right: 30px;"
                                         class="ion-heart ion"></i></h2>
 
-                                <p>Khoảng cách: {{item.distance}} Km</p>
+                                <p>Distance:{{item.distance}} Km</p>
                             </a>
                         </div>
                     </ion-slide>
                     <ion-slide>
                         <div class="box default">
                             <button class="button button-assertive" ng-click="quickChooseTaxi(item)">
-                                Gọi taxi
+                                Call taxi
                             </button>
                         </div>
                     </ion-slide>

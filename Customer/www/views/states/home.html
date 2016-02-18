@@ -89,7 +89,7 @@ z-index: 9;
                                     <p style="color: #66cc33;
 font-size: 9px;
 text-transform: uppercase;
-font-weight: 600;">Điểm hiện tại</p>
+font-weight: 600;">Current Score</p>
 
                                     <p style="color: #000;
 font-size: 14px;
@@ -113,7 +113,7 @@ font-weight: 400;">{{startPoint}}</p>
                                     <p style="color: #66cc33;
 font-size: 9px;
 text-transform: uppercase;
-font-weight: 600;">Địa điểm đến</p>
+font-weight: 600;">Places to</p>
 
                                     <p style="color: #999;
 font-size: 12px;">{{endPoint}}</p>
@@ -129,14 +129,14 @@ font-size: 12px;">{{endPoint}}</p>
 
     <div ng-show="!status.hasRouter" style="width: 100%;margin-top: 70px;">
         <button class="button button-full button-assertive" ng-click="callTaxi()" ng-disabled="status.callTaxiProcess">
-            <i class="ion ion-android-call"></i>GỌI TAXI
+            <i class="ion ion-android-call"></i>CALL TAXI
         </button>
     </div>
 
 
     <div ng-show="status.hasDriveAccept" style="width: 100%;margin-top: 70px;margin-left:10px">
         <button class="button  button-full bar-balanced" ng-click="$state.go('app.listTaxiAccept', {hasTaxi: true})">
-            <i class="ion ion-document-text"></i>TAXI ĐỒNG Ý
+            <i class="ion ion-document-text"></i>TAXI AGREE
         </button>
     </div>
 
@@ -149,20 +149,20 @@ font-size: 12px;">{{endPoint}}</p>
             <li>
                 <label class="checkbox" ng-show="status.hasRouter">
                     <input type="checkbox" ng-change="toggelPinPosition()" ng-model="status.pinPosition">
-                    Theo dõi
+                    Follow
                 </label>
             </li>
             <li>
                 <a ng-click="openConfirmDestroyRoute()">
                     <i class="ion-close-circled"></i>
 
-                    <p>Hủy lộ trình</p></a>
+                    <p>Cancel route</p></a>
             </li>
             <li>
                 <a ng-click="goToPage('app.driverInfo',{id : idTaxi})">
                     <i class="ion ion-model-s"></i>
 
-                    <p>Tài xế</p>
+                    <p>Driver</p>
                 </a>
             </li>
         </ul>
