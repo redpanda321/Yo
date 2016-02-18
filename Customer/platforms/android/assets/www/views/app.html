@@ -57,19 +57,19 @@
 
         <ul class="list">
             <a menu-close ui-sref-active="li-active" class="item-list" ui-sref="app.home">
-                <i class="ion-android-call royal" style="font-size: 20px;"></i> Gọi taxi
+                <i class="ion-android-call royal" style="font-size: 20px;"></i> Call taxi
             </a>
 
 
             <a ui-sref-active="li-active" class="item-list" menu-toggle="left" ui-sref="app.message">
                 <i class="icon ion-email energized"></i>
-                Thông báo
+                Notification
                 <!--<span class="badge badge-assertive">0</span>-->
             </a>
 
             <a ui-sref-active="li-active" ui-sref="app.taxicompany" class="item-list" menu-toggle="left">
                 <i class="icon ion-chatbubble-working positive"></i>
-                Danh bạ
+                Contacts
 
             </a>
 
@@ -78,45 +78,48 @@
             </a>-->
             <a ui-sref-active="li-active" ui-sref="app.bookmark" class="item-list" menu-toggle="left">
                 <i class="icon ion-star calm"></i>
-                Địa chỉ yêu thích
+                Address favorites
             </a>
 <!--
             <a ng-if="isLogin" ui-sref-active="li-active" ui-sref="app.myTaxi" class="item-list" menu-toggle="left">
                 <i style="color: rgb(173, 0, 255)" class="ion-android-add-contact icon"></i>
-                Taxi của tôi
+
+My Taxi
             </a>-->
 
             <a ng-if="isLogin" ui-sref-active="li-active" ui-sref="app.history" class="item-list" menu-toggle="left">
                 <i class="ion-android-folder icon"></i>
-                Lịch sử
+                Polite
 
             </a>
 
 <!--
             <a ui-sref-active="li-active" class="item-list" menu-toggle="left" ng-click="collapesHelp()">
                 <i class="ion-help-circled assertive"></i>
-                Hướng dẫn
+                Guide
             </a>-->
 
             <!--  <li class="item" ng-click="$state.go('app.home')" menu-toggle="left">
                   <a menu-toggle="left">
                       <i class="icon ion-model-s assertive"></i>
-                      Lái xe
+                      Driver
                   </a>
               </li>-->
             <a ui-sref="app.login" ui-sref-active="li-active" class="item-list" menu-toggle="left" ng-if="!isLogin">
                 <i class="icon ion-person-stalker balanced"></i>
-                Đăng nhập
+                Login
             </a>
 
             <a ui-sref-active="li-active" ui-sref="app.setting" class="item-list" menu-toggle="left" ng-if="isLogin">
                 <i class="ion-android-settings royal"></i>
-                Thông tin tài khoản
+
+                account information
             </a>
 
             <a class="item-list" menu-toggle="left" ng-click="logout()" ng-if="isLogin">
                 <i class="icon ion-share energized"></i>
-                Đăng xuất
+
+                Log out
             </a>
 
 
@@ -130,7 +133,7 @@
     <ion-header-bar class="bar-dark">
 
         <h2 class="text-center see-taxi" ng-if="!status.hasRouter">
-            <i class="ion-model-s ion"></i> &nbsp Taxi xung quanh
+            <i class="ion-model-s ion"></i> &nbsp Taxi around
         </h2>
 
 
@@ -138,14 +141,14 @@
 
 
 
-        <h2 class="text-center see-taxi" ng-if="status.hasRouter"><i class="ion-map"></i>Theo dõi lộ trình</h2>
+        <h2 class="text-center see-taxi" ng-if="status.hasRouter"><i class="ion-map"></i>Subscribe roadmap</h2>
 
     </ion-header-bar>
     <!--ng-if="!status.hasRouter"-->
     <ion-content>
         <ion-refresher on-refresh="doRefresh()"
-                       pulling-text="Kéo xuống để cập nhật..."
-                       refreshing-text="Cập nhật danh sách!"
+                       pulling-text="Pull down to update ..."
+                       refreshing-text="Update the list!"
                        refreshing-icon="ion-loading-c"
                        class="refresher">
         </ion-refresher>
@@ -164,7 +167,7 @@
 
                                 <h2>{{item.taxi}} : {{item.carLic}} &nbsp;&nbsp;</h2>
 
-                                <p>Khoảng cách: {{item.distance}} Km</p>
+                                <p>Distance: {{item.distance}} Km</p>
 
                                 <div class="icon-menu-right">
                                     <!--<i class="ion-ios7-telephone calm"></i> -->
