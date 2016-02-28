@@ -41,14 +41,13 @@ angular.module('itaxiApp')
                 gmaps.findTaxi(4);
             };
 
-          
 
-            // Gọi Taxi nhanh (Thao Thao tác này thực hiện khi mở menu phải)
+            // Fast Taxi call (Sports This action must be taken when opening menus)
 
             $rootScope.quickChooseTaxi = function (taxiInfo) {
                 $scope.quickChooseTaxiProcess = true;
 
-                $rootScope.showStatus("Đang kết nối với taxi...", true);  // Show StatusBar
+                $rootScope.showStatus("Connecting with taxi...", true);  // Show StatusBar
                 if ($ionicSideMenuDelegate.isOpen()) {
                     $logger.info('$ionicSideMenuDelegate', 'isOpen', true);
                     $scope.toggleRight(); // Return main
@@ -82,7 +81,7 @@ angular.module('itaxiApp')
                 socketIo.emit('quick:customer:choose:taxi', emitData);
 
                 console.log('quick:customer:choose:taxi', emitData);
-                $rootScope.notify('Gửi yêu cầu thành công !\nVui lòng đợi taxi xác nhận');
+                $rootScope.notify('Send request success! \ Wait taxi confirmation');
                 $rootScope.watingTaxi = true;
                 $scope.quickChooseTaxiProcess = false;
             };
@@ -91,8 +90,8 @@ angular.module('itaxiApp')
             window.socketIo.on('send:quick:taxi:accept:request', function (data) {
 
 
-                $rootScope.showStatus("Đang đợi taxi đón ...", true);
-                $rootScope.notify('Taxi đã đông ý yêu cầu của bạn.');
+                $rootScope.showStatus("Waiting for a taxi pickup ...", true);
+                $rootScope.notify('Taxis have agreed to your needs.');
                 $rootScope.watingTaxi = false;
 
                 var routeData = {
@@ -163,7 +162,7 @@ angular.module('itaxiApp')
                 }
 
                 $rootScope.pageTitleCalu = 'iTaxi';
-                $rootScope.notify('Lộ trình đã được bắt đầu !');
+                $rootScope.notify('The roadmap has been started!');
 
             });
 
@@ -231,13 +230,13 @@ angular.module('itaxiApp')
                 $rootScope.status.hasDriveAccept = false;
                 switch (data.status) {
                     case 2:
-                        msg = 'Lộ trình đã kết thúc!';
+                        msg = 'Roadmap ended!';
                         break;
                     case 3:
-                        msg = 'Quý khách đã hủy lộ trình thành công';
+                        msg = 'You canceled the successful route';
                         break;
                     case 4:
-                        msg = 'Lộ trình đã bị taxi hủy !. <br/>Tổng đài hỗ trợ: 19006789';
+                        msg = 'The roadmap has been canceled taxi!. <br/> PBX Support: 19006789';
                         break
                 }
 

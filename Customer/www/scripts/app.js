@@ -252,7 +252,7 @@ angular.module('itaxiApp', [
                         'controller': 'RegisterCtrl'
                     }
                 },
-                title: 'Đăng ký'
+                title: 'Register'
             })
             .state('app.login', {
                 url: '/login',
@@ -262,7 +262,7 @@ angular.module('itaxiApp', [
                         controller: 'LoginCtrl'
                     }
                 },
-                title: 'Đăng nhập'
+                title: 'Login'
             })
             /*.state('app.support', {
              url: '/support',
@@ -281,7 +281,7 @@ angular.module('itaxiApp', [
                         controller: 'TaxiCompanyCtrl'
                     }
                 },
-                title: 'Danh bạ Taxi'
+                title: 'Contacts Taxi'
             })
             .state('app.bookmark', {
                 url: '/bookmark',
@@ -291,7 +291,7 @@ angular.module('itaxiApp', [
                         controller: 'BookmarkCtrl'
                     }
                 },
-                title: 'Địa điểm yêu thích'
+                title: 'Favorite Places'
             })
             .state('app.companyDetail', {
                 url: '/Company-detail/:id',
@@ -301,7 +301,7 @@ angular.module('itaxiApp', [
                         controller: 'companyDetailCtrl'
                     }
                 },
-                title: 'Thông tin taxi'
+                title: 'Info Taxi'
             })
             .state('app.history', {
                 url: '/history',
@@ -311,7 +311,7 @@ angular.module('itaxiApp', [
                         controller: 'HistoryCtrl'
                     }
                 },
-                title: 'Lịch sử lộ trình'
+                title: 'History roadmap'
             })
             .state('app.myTaxi', {
                 url: '/myTaxi',
@@ -321,7 +321,7 @@ angular.module('itaxiApp', [
                         controller: 'myTaxiCtrl'
                     }
                 },
-                title: 'Taxi của tôi'
+                title: 'My Taxi'
             })
             .state('app.message', {
                 url: '/message',
@@ -331,7 +331,7 @@ angular.module('itaxiApp', [
                         controller: 'MessageCtrl'
                     }
                 },
-                title: 'Tin nhắn'
+                title: 'Message'
 
             })
             .state('app.messageDetail', {
@@ -342,7 +342,7 @@ angular.module('itaxiApp', [
                         controller: 'messageDetailCtrl'
                     }
                 },
-                title: 'Hộp thư'
+                title: 'Mailbox'
 
             })
             .state('app.setting', {
@@ -353,7 +353,7 @@ angular.module('itaxiApp', [
                         controller: 'SettingCtrl'
                     }
                 },
-                title: 'Cài đặt'
+                title: 'Installation'
             })
             .state('app.listTaxiAccept', {
                 url: '/list-taxi-accept/:hasTaxi',
@@ -363,7 +363,7 @@ angular.module('itaxiApp', [
                         controller: 'ListTaxiAcceptCtrl'
                     }
                 },
-                title: 'Danh sách taxi đồng ý'
+                title: 'List of taxi agree'
             })
             .state('app.driverInfo', {
                 url: '/driver-info/:id',
@@ -373,7 +373,7 @@ angular.module('itaxiApp', [
                         controller: 'DriverInfoCtrl'
                     }
                 },
-                title: 'Thông tin tài xế'
+                title: 'Driver information'
             })
             .state('app.address', {
                 url: '/address',
@@ -383,7 +383,7 @@ angular.module('itaxiApp', [
                         controller: 'addressCtrl'
                     }
                 },
-                title: 'Tính toán lộ trình'
+                title: 'Route calculation'
             });
 
 
@@ -592,7 +592,7 @@ angular.module('itaxiApp', [
              * */
             function out() {
                 navigator.notification.confirm(
-                    'Bạn muốn thoát ứng dụng TaxiGo!', // message
+                    'You want to escape the application TaxiGo!', // message
                     function (button) {
                         if (button == 1) {
                             if (navigator.app) {
@@ -601,12 +601,12 @@ angular.module('itaxiApp', [
                             else if (navigator.device) {
                                 navigator.device.exitApp();
                             } else {
-                                alert('Thiết bị của bạn không phải là Device');
+                                alert('Your device is not Device');
                             }
                         }
                     },
-                    'Đóng ứng dụng',           // title
-                    ['Thoát', 'Trở lại']         // buttonLabels
+                    'Close applications',           // title
+                    ['exit', 'Come back']         // buttonLabels
                 );
             }
 
@@ -615,7 +615,7 @@ angular.module('itaxiApp', [
                 if (navigator.notification) {
                     out();
                 } else {
-                    alert('Thoát ứng dụng được hỗ trợ trên App! xin cảm ơn');
+                    alert('Exit supported applications on the App! thank you');
                 }
             };
 
@@ -683,7 +683,7 @@ angular.module('itaxiApp', [
                     $state.go('contacts');
                     return false;
                 } else if (navigator.network.connection.type == Connection.CELL_2G) {
-                    //alert('Kết nối mạng của bạn là 2G! \nĐiều hướng tới danh sách Taxi xung quanh');
+                    //alert('Connect your network is 2G! \ Navigate to list Taxi around');
                     alert('Connection type is 2G');
                     $state.go('contacts');
                     return false;
@@ -716,7 +716,7 @@ angular.module('itaxiApp', [
                     if (resp) {
                         $rootScope.isLogin = false;
                         $state.go('app.home');
-                        $rootScope.notify('Đăng xuất thành công !');
+                        $rootScope.notify('Logout successful !');
 
                     } else {
                     }
@@ -872,15 +872,16 @@ angular.module('itaxiApp', [
             $rootScope.callTaxiQuick = function (taxi) {
                 console.log('callTaxiQuick', 'start', taxi);
                 $ionicPopup.show({
-                    title: 'Lái xe : ' + taxi.taxi + " Hãng: " + taxi.carLic,
-                    subTitle: 'Bạn có muốn gọi taxi này?',
+                    title: 'Driver : ' + taxi.taxi + " Groin: " + taxi.carLic,
+                    subTitle: 'What you want to call a taxi?',
                     scope: $rootScope,
                     buttons: [
-                        { text: 'Để sau', onTap: function (e) {
+                        {
+                            text: 'Later', onTap: function (e) {
                             //2
                         } },
                         {
-                            text: '<b>Gọi</b>',
+                            text: '<b>Pillow</b>',
                             type: 'button-positive',
                             onTap: function (e) {
                                 //1
@@ -919,7 +920,7 @@ angular.module('itaxiApp', [
                         // TODO : Do something
                     } else {
                         $rootScope.watingTaxi = true;
-                        $rootScope.showStatus("Đang đợi taxi đón ...", true);
+                        $rootScope.showStatus("Waiting for a taxi pickup ...", true);
 
                         if ($rootScope.stepDirection && $rootScope.distanceCheck) {
                             var statusBarContent = '';
@@ -929,14 +930,14 @@ angular.module('itaxiApp', [
                             $rootScope.checkcompany = true;
                             if (res <= taxiData.company.firstKm) {
 
-                                statusBarContent = taxiData.company.companyName + " : " + res + " Km - Giá :" + taxiData.company.firstPrice + " VNĐ";
+                                statusBarContent = taxiData.company.companyName + " : " + res + " Km - Old :" + taxiData.company.firstPrice + " CNY";
 
                             } else if (res <= taxiData.company.middleKm) {
-                                statusBarContent = taxiData.company.companyName + " : " + res + " Km - Giá :" + Math.round(taxiData.company.firstPrice + ((res - taxiData.company.firstKm ) * taxiData.company.middlePrice)) + " VNĐ";
+                                statusBarContent = taxiData.company.companyName + " : " + res + " Km - Old :" + Math.round(taxiData.company.firstPrice + ((res - taxiData.company.firstKm ) * taxiData.company.middlePrice)) + " CNY";
                             } else {
-                                statusBarContent = taxiData.company.companyName + " : " + res + " Km - Giá :" + $filter('currency')(Math.round(taxiData.company.firstPrice
+                                statusBarContent = taxiData.company.companyName + " : " + res + " Km - Old :" + $filter('currency')(Math.round(taxiData.company.firstPrice
                                     + (taxiData.company.middleKm - taxiData.company.firstKm) * taxiData.company.firstPrice
-                                    + (res - taxiData.company.middleKm) * taxiData.company.lastPrice), "VNĐ");
+                                        + (res - taxiData.company.middleKm) * taxiData.company.lastPrice), "CNY");
                             }
 
                             /*setTimeout(function () {*/
@@ -954,7 +955,7 @@ angular.module('itaxiApp', [
                         /*$rootScope.idTaxi = taxiData.id;*/
 
 
-                        $rootScope.notify('Lái xe đã nhận được yêu cầu! vui lòng đợi trong giây lát');
+                        $rootScope.notify('Driver has received a request! please wait');
                         $state.go('app.home');
                     }
                 });
@@ -971,7 +972,7 @@ angular.module('itaxiApp', [
             });
 
             document.addEventListener("offline", function () {
-                $rootScope.statusContent = 'Không có kết nối mạng';
+                $rootScope.statusContent = 'no network connection';
             });
             $auth.setHeaderToken();
 
