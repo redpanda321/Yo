@@ -10,16 +10,16 @@
     </select>-->
     <label>
         <select ng-model="deleteInfo.deleteReason" class="form-control select--large">
-            <option value="" selected="selected"> Chọn lý do: </option>
-            <option>Việc đột xuất không thể đi Taxi</option>
-            <option>Đi Taxi vào 1 thời điểm khác</option>
-            <option>Thời gian đến đón quá chậm</option>
-            <option>Lý do khác</option>
+            <option value="" selected="selected">Select a reason: </option>
+            <option>The unexpected can not go Taxis</option>
+            <option>Take a taxi to one another time</option>
+            <option>Time to pick up too slow</option>
+            <option>Other reasons</option>
         </select>
     </label>
 </div>
 
 <div class="group-control" ng-if="deleteInfo.deleteReason == 'Lý do khác'">
-    <label>Nhập lý do : </label>
+    <label>Enter a reason : </label>
     <input type="text" class="light-input full form-control" ng-model="deleteInfo.otherReason">
 </div>

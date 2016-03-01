@@ -1,60 +1,60 @@
 <div class="modal">
     <ion-header-bar class="bar bar-header bar-energized">
-        <h1 class="title">Lịch sử lộ trình</h1>
-        <button class="button button-clear button-primary" ng-click="modal.hide()">Quay lại</button>
+        <h1 class="title">History roadmap</h1>
+        <button class="button button-clear button-primary" ng-click="modal.hide()">Come back</button>
     </ion-header-bar>
     <ion-content>
         <div >
             <div class="list" style="font-size:12px;">
 
                 <div class="item item-divider">
-                    Thông tin lộ trình
+                    Information roadmap
                 </div>
 
                 <p class="item">
-                    <span style="width:150px;float:left">Thời gian :</span> {{detailHistory.startAt | amCalendar }}
+                    <span style="width:150px;float:left">Time :</span> {{detailHistory.startAt | amCalendar }}
                 </p>
 
                 <p class="item">
-                    <span style="width:150px;float:left">Tình trạng :</span> {{filterStatus(detailHistory.status) }}
+                    <span style="width:150px;float:left">Status:</span> {{filterStatus(detailHistory.status) }}
                 </p>
 
                 <p class="item">
-                    <span style="width:150px;float:left">Từ :</span> {{detailHistory.startPoint}}
+                    <span style="width:150px;float:left">From:</span> {{detailHistory.startPoint}}
                 </p>
 
                 <p class="item">
-                    <span style="width:150px;float:left">Đến :</span> {{detailHistory.endPoint}}
+                    <span style="width:150px;float:left">Come :</span> {{detailHistory.endPoint}}
                 </p>
 
                 <p class="item">
-                    <span style="width:150px;float:left">Ước lượng :</span> {{detailHistory.distance / 1000}} KM - {{detailHistory.amount | toCurrency}} VNĐ
+                    <span style="width:150px;float:left">Estimates :</span> {{detailHistory.distance / 1000}} KM - {{detailHistory.amount | toCurrency}} VNĐ
                 </p>
 
 
                 <div class="item item-divider">
-                    Tài xế
+                    Driver
                 </div>
 
                 <p class="item">
-                    <span style="width:150px;float:left">Tên :</span> {{detailHistory.driver.fullname}}
+                    <span style="width:150px;float:left">Name :</span> {{detailHistory.driver.fullname}}
                 </p>
 
                 <p class="item">
-                    <span style="width:150px;float:left">Số điện thoại :</span> {{detailHistory.driver.phone}}
+                    <span style="width:150px;float:left">phone number :</span> {{detailHistory.driver.phone}}
                 </p>
 
                 <p class="item">
-                    <span style="width:150px;float:left">Số xe :</span> {{detailHistory.driver.username}}
+                    <span style="width:150px;float:left">number of vehicles :</span> {{detailHistory.driver.username}}
                 </p>
 
                 <div class="item item-divider" >
-                    Gửi phản hồi
+                    Send feedback
                 </div>
                 <p class="item">
                     <textarea name="ax" id="" cols="30" rows="10" ng-model="reportContent"></textarea><br/>
                     <button class="button button-energized" style="width: 100%" ng-click="addReport(reportContent)" ng-disabled="addReportProcess">
-                        Gửi
+                        Sends
                     </button>
                 </p>
             </div>
