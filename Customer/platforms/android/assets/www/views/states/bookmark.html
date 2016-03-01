@@ -1,4 +1,5 @@
-<ion-view title="Địa điểm yêu thích" class="bookmark">
+<ion-view title="
+Favorite Places" class="bookmark">
     <ion-content padding="true">
 
         <!--<div class="list">
@@ -13,7 +14,7 @@
             <img ng-show="checkBookmarks" style="width: 50px;" class="text-center" src="./images/bookmark.png" alt="bookmark"/>
         </div>
 
-        <p  ng-show="checkBookmarks" class="text-center"> <i ng-class="quickstylebookmark" class="icon ion-star"></i> Hiện tại bạn chưa lưu địa điểm đến nào!</p>
+        <p  ng-show="checkBookmarks" class="text-center"> <i ng-class="quickstylebookmark" class="icon ion-star"></i> Currently you have not saved any destination!</p>
 
 
 
@@ -34,7 +35,7 @@
 
         <h5 ng-show="!checkBookmarks" class="text-center">
             <img src="./images/Local-Icon-06.png" alt=""/>
-            <div class="text-center">Các địa điểm đã lưu </div>
+            <div class="text-center">Saved locations </div>
         </h5>
         <ul>
             <li ng-repeat="bookmark in listBookmarks" ng-click="selectBookmark(bookmark)">

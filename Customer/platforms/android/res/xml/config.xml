@@ -23,7 +23,7 @@
     <name>App</name>
     <description>Multiplatform template</description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">CKGrafico</author>
-    <content original-src="index.html" src="http://192.168.100.174:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <vs:features />
     <preference name="SplashScreen" value="screen" />

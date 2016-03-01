@@ -1,4 +1,4 @@
-<ion-view title="Tin nhắn" class="messages">
+<ion-view title="Message" class="messages">
     <ion-content padding="false">
 
         <!--<div class="list" >
@@ -19,21 +19,23 @@
             <a class="item item-thumbnail-left" ng-click="filterMessage(0)" ng-class="(systemMessageStatus) ? 'active' : ''">
                 <img src="./images/logo-new.png" alt=""/>
 
-                <h2>Hệ Thống</h2>
+                <h2>System</h2>
 
-                <p>Thông báo từ hệ thống</p>
+                <p>Notifications from the system</p>
                 <button class="button button-positive">
-                    {{systemUnread}} thông báo mới
+                    {{systemUnread}}
+                    new notification
                 </button>
             </a>
             <a class="item item-thumbnail-left " ng-click="filterMessage(1)" ng-class="(taxiCompanyStatus) ? 'active' : ''">
                 <img src="./images/group.png" alt=""/>
 
-                <h2>Hãng taxi</h2>
+                <h2>Taxi companies</h2>
 
-                <p>Thông báo từ hãng</p>
+                <p>
+                    Notice from the company</p>
                 <button class="button button-calm">
-                    {{companyUnread}} thông báo mới
+                    {{companyUnread}} new notification
                 </button>
             </a>
         </div>

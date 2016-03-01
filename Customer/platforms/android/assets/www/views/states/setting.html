@@ -1,4 +1,5 @@
-<ion-view title="Cài đặt" class="setting">
+<ion-view title="
+Installation" class="setting">
     <ion-content padding="true">
 
         <div class="avatar text-center">
@@ -6,7 +7,7 @@
             <a ng-click="showActionsheet()">
                 <img src="{{ getAvt(UserInfo.avatar) }}" alt=""/>
 
-                <p >Thay đổi ảnh đại diện</p>
+                <p >Change avatar</p>
             </a>
 
             <form>
@@ -17,19 +18,20 @@
         <div class="edit-acc">
             <ul>
                 <li>
-                    <p>Họ tên:</p>
+                    <p>Full name:</p>
                     <input type="text" ng-model="UserInfo.fullname">
                 </li>
                 <li>
-                    <p>Số điện thoại:</p>
+                    <p>Phone number:</p>
                     <input type="tel" ng-model="UserInfo.phone" disabled>
                 </li>
                 <li>
-                    <p>Ngày sinh:</p>
+                    <p>
+                        Birthday:</p>
                     <input type="date" ng-model="UserInfo.birthday">
                 </li>
                 <li>
-                    <p>Địa chỉ:</p>
+                    <p>Address:</p>
                     <input type="text" ng-model="UserInfo.location">
                 </li>
                 <!--<li>
@@ -43,7 +45,7 @@
     </ion-content>
     <div class="submit padding">
         <button class="button button-block button-positive" ng-click="saveUserInfo(UserInfo)" ng-disabled="disableButtonSave">
-            Xác nhận
+            Confirm
         </button>
     </div>
 
