@@ -1,0 +1,8 @@
+/Customer/platforms
+/Operator/platforms
+/Provider/platforms
+/Customer/*.sln
+/Customer/*.user
+/Customer/*.jsproj
+/Customer/node_modules
+/Customer/.vs
