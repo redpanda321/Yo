@@ -643,7 +643,7 @@ angular.module('itaxiApp')
                 var emitData = {
                     from: appConfig.deviceId,
                     to: taxi.getDirectionInfo()[0].driver.username,
-                    name: 'Khách hàng',
+                    name: 'Customer',
                     deviceId: appConfig.deviceId,
                     content: messageContent,
                     time: new Date(),
