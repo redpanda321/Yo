@@ -58,7 +58,7 @@ angular.module('itaxiApp')
 
             var loadMessage = function () {
                 $rootScope.loadingIndicator = $ionicLoading.show({
-                    template: 'Đang tải dữ liệu...',
+                    template: 'Loading...',
                     noBackdrop : true
                 });
 
@@ -113,7 +113,7 @@ angular.module('itaxiApp')
                     if (err) {
                         console.log('err : ', err);
                     } else {
-                        $rootScope.notify('Xóa tin nhắn thành công!', 1000);
+                        $rootScope.notify('Delete messages successfully!', 1000);
                         appDataStore.messageData.remove(item);
                     }
                 });

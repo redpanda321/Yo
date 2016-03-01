@@ -14,7 +14,7 @@ angular.module('itaxiApp')
 
             var loadDriverInfo = function () {
 
-                $rootScope.showStatus('Đang lấy thông tin..');
+                $rootScope.showStatus('Obtaining information..');
 
                 if (appDataStore.taxiInfo.size() > 0 && appDataStore.taxiInfo.get(driverID)) {
                     $scope.infomation = appDataStore.taxiInfo.get(driverID);
@@ -63,7 +63,7 @@ angular.module('itaxiApp')
 
                             //$ionicLoading.hide();
                         } else {
-                          $rootScope.showStatus('Lấy thông tin thất bại',1400);
+                          $rootScope.showStatus('Get information failure',1400);
                         }
                     });
                 }
@@ -95,15 +95,15 @@ angular.module('itaxiApp')
                         $restful.delete({table: 'MyTaxi', id: resp.data[0].id}, function (resp) {
                             if (resp.success) {
                                 $scope.removeMyTaxiProcess = false;
-                                $rootScope.notify('Xóa Taxi thành công');
+                                $rootScope.notify('Taxi deleted successfully');
                                 $scope.canAddTaxi = true;
                             } else {
-                                $rootScope.notify('Có lỗi xẩy ra !');
+                                $rootScope.notify('An error has occurred !');
                             }
                         });
                     }else {
                         $scope.removeMyTaxiProcess = false;
-                        $rootScope.notify('Có sự cố xảy ra ! Vui lòng thử lại sau .');
+                        $rootScope.notify('There is a problem! Please try again later .');
                     }
                 });
 
@@ -114,7 +114,7 @@ angular.module('itaxiApp')
                 var emitData = {
                     from: appConfig.deviceId,
                     to: taxi.getDirectionInfo()[0].driver.username,
-                    name: 'Khách hàng',
+                    name: 'Customer',
                     deviceId: appConfig.deviceId,
                     content: messageContent,
                     time: new Date(),
@@ -145,7 +145,7 @@ angular.module('itaxiApp')
 
 
             $scope.addMyTaxi = function (taxiInfo) {
-                $rootScope.notify('Đang thêm ..', true);
+                $rootScope.notify('adding ..', true);
 
                 var data = {
                     customer: $auth.getAppRegisterInfo().id,

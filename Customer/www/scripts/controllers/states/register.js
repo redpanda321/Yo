@@ -16,16 +16,16 @@ angular.module('itaxiApp')
                     $scope.registerProcess  = false;
 
                 } else if (!info || !info.password || !info.repassword || !info.username || !info.fullname) {
-                    $rootScope.notify('Vui lòng nhập đầy đủ thông tin', 1500);
+                    $rootScope.notify('Please enter complete information', 1500);
 
                     $scope.registerProcess  = false;
                 } else if (info.password != info.repassword) {
-                    $rootScope.notify('2 mật khẩu không khớp! vui lòng nhập chính xác', 1500);
+                    $rootScope.notify('2 Passwords do not match! please enter the exact', 1500);
 
                     $scope.registerProcess  = false;
                 } else {
                     var _loading = $ionicLoading.show({
-                        content: 'Đang đăng ký ...',
+                        content: 'Subscribing ...',
                         showBackdrop: false
                     });
                     var uId = $auth.getAppRegisterInfo().id;
@@ -42,12 +42,12 @@ angular.module('itaxiApp')
                                 $auth.setAppRegister(result.data);
 
 //                                $scope.waitLogin = true;
-                                _loading.setContent('Đang đăng nhập vào hệ thống ...');
+                                _loading.setContent('Are logged into the system ...');
 
                                 $auth.login(info.username, info.password, function (err, result) {
 
                                     if (err) {
-                                        _loading.setContent('Đăng nhập thất bại ...');
+                                        _loading.setContent('Login failed ...');
 
                                         $timeout(function () {
                                             _loading.hide();
@@ -55,7 +55,7 @@ angular.module('itaxiApp')
 
                                         //$scope.loginMessage = 'Đăng nhập thất bại !. </br> Vui lòng thử lại';
                                     } else {
-                                        _loading.setContent('Đăng nhập thành công ..');
+                                        _loading.setContent('logged in successfully ..');
 
                                         $timeout(function () {
                                             _loading.hide();
@@ -73,11 +73,11 @@ angular.module('itaxiApp')
                                 $scope.registerProcess  = false;
                                 switch (result.message) {
                                     case 'REGISTER.ERR.REGISTED':
-                                        $rootScope.notify('Thiết bị của bạn đã được đăng ký !\n');
+                                        $rootScope.notify('Your device is already registered !\n');
                                         break;
 
                                     case 'REGISTER.ERR.USERNAME':
-                                            $rootScope.notify('Số điện thoại này đã được sử dụng ! ');
+                                            $rootScope.notify('This phone number has been used! ');
                                         break;
                                 }
 

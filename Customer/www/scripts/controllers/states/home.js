@@ -129,15 +129,15 @@ angular.module('itaxiApp')
 
                     $ionicPopup.show({
                         templateUrl: 'views/utils/getPhoneNumber.html',
-                        title: 'Nhập số điện thoại',
-                        subTitle: '(chỉ cần nhập lần đầu)',
+                        title: 'Enter your phone number',
+                        subTitle: '(Just enter first)',
                         scope: $scope,
                         buttons: [
-                            { text: 'Hủy', onTap: function (e) {
+                            { text: 'Cancel', onTap: function (e) {
                                 return true;
                             } },
                             {
-                                text: '<b>Xác nhận</b>',
+                                text: '<b>Comfirm</b>',
                                 type: 'button-positive',
                                 onTap: function (e) {
 
@@ -195,7 +195,7 @@ angular.module('itaxiApp')
                
                // bookmar load,
                 $rootScope.loadingIndicator = $ionicLoading.show({
-                    template: 'Đang thêm địa chỉ yêu thích...',
+                    template: 'Adding favorite addresses...',
                     noBackdrop: true
                 });
 
@@ -221,7 +221,7 @@ angular.module('itaxiApp')
                     for (var i = 0; i < appDataStore.listBookmark.all().length; i++) {
                         if (appDataStore.listBookmark.all()[i].bookmarkPoint == bookmarkPoint) {
                                $ionicLoading.hide();
-                            $rootScope.notify('Bạn đã lưu địa chỉ này');
+                            $rootScope.notify('You saved this address');
                             flag = false;
                             return;
                         }
@@ -232,7 +232,7 @@ angular.module('itaxiApp')
 
                             if (err) {
                                    $ionicLoading.hide();
-                                $rootScope.notify('Có lỗi xảy ra !. Vui lòng thử lại sau');
+                                $rootScope.notify('An error occurred!. Please try again later');
                                 $logger.info('addBookmarks', 'err', err);
                             } else {
                                 $logger.info('addBookmarks', 'resp', result);
@@ -244,14 +244,14 @@ angular.module('itaxiApp')
                                     $scope.stylebookmark1 = 'booksave';
                                 }
                                 $ionicLoading.hide();
-                                $rootScope.notify('Lưu địa chỉ thành công!');
+                                $rootScope.notify('Save successfully address!');
 
                                 $scope.notBookmark = false;
                             }
                         })
                     }
                 } else {
-                    $rootScope.notify('Vui lòng nhập địa chỉ');
+                    $rootScope.notify('Please enter the address');
                 }
             };
 
@@ -289,7 +289,7 @@ angular.module('itaxiApp')
                         taxi.updateRoute(taxi.getDirectionInfo()[0].id, {status: 3, deleteReason: deleteReason}, function (error, result) {
                             if (result) {
                                 /*$rootScope.tooltip.open('Hủy lộ trình thành công');*/
-                                $rootScope.notify('Hủy lộ trình thành công');
+                                $rootScope.notify('Cancellations successful route');
 
                                 taxi.setCurrentStatus(0);
                                 taxi.setDirectionInfo(null);
@@ -336,22 +336,22 @@ angular.module('itaxiApp')
 
                 $ionicPopup.show({
                     templateUrl: 'views/utils/destroyModal.html',
-                    title: 'Xác nhận hủy lộ trình',
-                    subTitle: 'Nhập lý do',
+                    title: 'Confirm cancellation roadmap',
+                    subTitle: 'Enter a reason',
                     scope: $scope,
                     buttons: [
-                        { text: 'Không', onTap: function (e) {
+                        { text: 'Not', onTap: function (e) {
                             return true;
                         } },
                         {
-                            text: '<b>Hủy</b>',
+                            text: '<b>Cancel</b>',
                             type: 'button-positive',
                             onTap: function (e) {
                                 if ($scope.deleteInfo.deleteReason != null) {
                                     $scope.destroyRoute($scope.deleteInfo);
                                     return true;
                                 } else {
-                                    $rootScope.notify('Vui lòng chọn lý do!!!', 1000);
+                                    $rootScope.notify('Please select the reason!!!', 1000);
                                     setTimeout(function () {
                                         $scope.openConfirmDestroyRoute();
                                     }, 1000)
@@ -377,7 +377,7 @@ angular.module('itaxiApp')
 
             window.socketIo.on('send:quick:taxi:reject', function (data) {
                 $rootScope.hideStatus();
-                $rootScope.notify('Taxi đã từ chối yêu cầu của bạn.');
+                $rootScope.notify('Taxi refused your request.');
                 $rootScope.watingTaxi = false;
             });
 
@@ -420,7 +420,7 @@ angular.module('itaxiApp')
 
             $scope.goToCenter = function () { // go to current position on maps
 
-                $rootScope.notify('Tìm vị trí', 2000);
+                $rootScope.notify('Find locations', 2000);
 
                 $logger.info('gotoCenter', 'start', true);
                 navigator.geolocation.getCurrentPosition(function (position) { // GET POSITION SUCCESS
@@ -558,11 +558,11 @@ angular.module('itaxiApp')
 
                     if ($rootScope.showPlace == 0) {
                         $rootScope.resultPlace = [
-                            {description: 'Ngã tư cổ nhuế - Hà Nội'},
-                            {description: 'Royal City - Hà Nội'},
-                            {description: 'Công viên Hòa Bình - Hà Nội'},
-                            {description: 'Trung tâm hội nghị quốc gia - Hà Nội'},
-                            {description: 'VNT Tower Ngã Tư sở - Hà Nội'}
+                            {description: 'Crossroads Co Nhue - Hanoi'},
+                            {description: 'Royal City - Hanoi'},
+                            {description: 'Peace Park - Hanoi'},
+                            {description: 'National Convention Center - Hanoi'},
+                            {description: 'VNT Tower Crossroad - Hanoi'}
                         ];
                     }
                 }, function (err) {
@@ -575,11 +575,11 @@ angular.module('itaxiApp')
 
                 if ($rootScope.showPlace == 0) {
                     $rootScope.resultPlace = [
-                        {description: 'Ngã tư cổ nhuế - Hà Nội'},
-                        {description: 'Royal City - Hà Nội'},
-                        {description: 'Công viên Hòa Bình - Hà Nội'},
-                        {description: 'Trung tâm hội nghị quốc gia - Hà Nội'},
-                        {description: 'VNT Tower Ngã Tư sở - Hà Nội'}
+                        {description: 'Crossroads Co Nhue - Hanoi'},
+                        {description: 'Royal City - Hanoi '},
+                        {description: 'Peace Park - Hanoi'},
+                        {description: 'National Convention Center - Hanoi'},
+                        {description: 'VNT Tower Crossroad - Hanoi'}
                     ];
                 }
             } else {
@@ -652,19 +652,19 @@ angular.module('itaxiApp')
                 };
 
                 $socketIo.emit('send:message', emitData);
-                $rootScope.notify('Gửi tin nhắn thành công!', 1500);
+                $rootScope.notify('Send a message success!', 1500);
 
             };
 
             $scope.showPrompt = function () {
                 $ionicPopup.prompt({
-                    title: 'Ghi chú',
-                    subTitle: 'Nhập tin nhắn gửi tới lái xe! (chờ đại sảnh,ngõ 155....)'
+                    title: 'Note',
+                    subTitle: 'Enter a message sent to the driver! (Waiting hall, Lane 155....)'
                 }).then(function (res) {
                     if (res) {
                         sendMessage(res);
                     } else {
-                        $rootScope.notify('Vui lòng nhập nội dung', 1000);
+                        $rootScope.notify('Please enter text', 1000);
                     }
                 });
             };
