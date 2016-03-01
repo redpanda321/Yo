@@ -67,15 +67,15 @@ angular.module('itaxiApp')
 
             $scope.showConfirmCall = function (taxi) {
                 $ionicPopup.show({
-                    title: 'Lái xe : '+ taxi.fullname,
-                    subTitle: 'Bạn có muốn xem thông tin lái xe!',
+                    title: 'Driver : '+ taxi.fullname,
+                    subTitle: 'Do you want to see the information drive!',
                     scope: $scope,
                     buttons: [
-                        { text: 'Xem thông tin', onTap: function (e) {
+                        { text: 'Watch information', onTap: function (e) {
                             $rootScope.goToPage('app.driverInfo', {id: taxi.id})
                         } },
                         {
-                            text: '<b>Chấp nhận Taxi</b>',
+                            text: '<b>Accept Taxi</b>',
                             type: 'button-positive',
                             onTap: function (e) {
                                 $rootScope.chooseTaxi(taxi);

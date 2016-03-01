@@ -23,8 +23,8 @@ angular.module('itaxiApp')
 
             $scope.deleteBookmark = function (bookmark) {
                 $ionicPopup.confirm({
-                    title: 'Xóa Địa chỉ yêu thích',
-                    content: 'Bạn có chắc chắn muốn xóa Bookmark này? '
+                    title: 'Clear Address favorites',
+                    content: 'Are you sure you want to delete this Bookmark? '
                 }).then(function (res) {
                     if (res) {
                         bookmark.destroy(function (err, result) {
@@ -48,24 +48,24 @@ angular.module('itaxiApp')
 
                 $ionicPopup.show({
                     templateUrl: 'views/utils/addBookmarkModal.html',
-                    title: 'Tạo địa chỉ yêu thích',
+                    title: 'Create a favorite',
                     /*subTitle: 'WPA2',*/
                     scope: $scope,
                     buttons: [
                         {
-                            text: 'Hủy',
+                            text: 'Cancel',
                             onTap: function (e) {
                                 return true;
                             }
                         },
                         {
-                            text: '<b>Đồng ý</b>',
+                            text: '<b>Agree</b>',
                             type: 'button-positive',
                             onTap: function (e) {
                                 if (Object.keys($scope.bookmarkItem).length > 0) {
                                     return $scope.bookmarkItem;
                                 } else {
-                                    alert('Vui lòng nhập đầy đủ');
+                                    alert('Please enter a full');
                                     return false;
                                 }
                             }
@@ -86,14 +86,14 @@ angular.module('itaxiApp')
 
             $scope.selectBookmark = function (data) {
                 $ionicActionSheet.show({
-                    titleText: 'Địa chỉ yêu thích',
+                    titleText: 'Address favorites',
                     buttons: [
-                        { text: 'Chọn làm điểm đến' }
+                        { text: 'Select as destination' }
                         /* { text: 'Chọn làm điểm đi' },
                          { text: 'Sửa' }*/
                     ],
-                    destructiveText: 'Xóa',
-                    cancelText: 'Hủy',
+                    destructiveText: 'Erase',
+                    cancelText: 'Cancel',
                     cancel: function () {
                         console.log('CANCELLED');
                     },
@@ -131,15 +131,15 @@ angular.module('itaxiApp')
                     var saveItem = new $baseModel('Bookmarks', bookmarkItem);
                     saveItem.save(function (err, result) {
                         if (err) {
-                            $rootScope.notify('Lưu địa chỉ thất bại!');
+                            $rootScope.notify('Save address failures!');
                             $logger.info('addBookmarks', 'err', err);
                         } else {
                             /*$scope.listBookmarks.push(result);*/
                             $rootScope.bookmarked = true;
                             $logger.info('addBookmarks', 'resp', result);
-                            $rootScope.notify('Lưu địa chỉ thành công!');
+                            $rootScope.notify('Save successfully address!');
                             $scope.quickstylebookmark = 'booksave';
-                            console.log('Lưu địa chỉ thành công!');
+                            console.log('Save successfully address!');
                             $scope.notBookmark = false;
 
                             appDataStore.listBookmark.add(bookmarkItem);
@@ -150,7 +150,7 @@ angular.module('itaxiApp')
                         }
                     })
                 } else {
-                    $rootScope.notify('Vui lòng nhập đầy đủ thông tin');
+                    $rootScope.notify('Please enter complete information');
                 }
             };
 

@@ -42,7 +42,7 @@ angular.module('itaxiApp')
                     });
 
                 } else {
-                    $rootScope.notify('Vui lòng nhập đầy đủ!', 1000);
+                    $rootScope.notify('Please enter a full!', 1000);
                 }
             };
 
