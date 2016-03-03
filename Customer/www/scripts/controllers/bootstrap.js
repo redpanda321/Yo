@@ -47,7 +47,7 @@ angular.module('itaxiApp')
             $rootScope.quickChooseTaxi = function (taxiInfo) {
                 $scope.quickChooseTaxiProcess = true;
 
-                $rootScope.showStatus("Connecting with taxi...", true);  // Show StatusBar
+                $rootScope.showStatus("联系车...", true);  // Show StatusBar
                 if ($ionicSideMenuDelegate.isOpen()) {
                     $logger.info('$ionicSideMenuDelegate', 'isOpen', true);
                     $scope.toggleRight(); // Return main
@@ -81,7 +81,7 @@ angular.module('itaxiApp')
                 socketIo.emit('quick:customer:choose:taxi', emitData);
 
                 console.log('quick:customer:choose:taxi', emitData);
-                $rootScope.notify('Send request success! \ Wait taxi confirmation');
+                $rootScope.notify('发送请求成功! \ 请等待司机确认');
                 $rootScope.watingTaxi = true;
                 $scope.quickChooseTaxiProcess = false;
             };
@@ -90,8 +90,8 @@ angular.module('itaxiApp')
             window.socketIo.on('send:quick:taxi:accept:request', function (data) {
 
 
-                $rootScope.showStatus("Waiting for a taxi pickup ...", true);
-                $rootScope.notify('Taxis have agreed to your needs.');
+                $rootScope.showStatus("等待司机回应...", true);
+                $rootScope.notify('司机同意您的请求.');
                 $rootScope.watingTaxi = false;
 
                 var routeData = {
@@ -161,8 +161,8 @@ angular.module('itaxiApp')
 
                 }
 
-                $rootScope.pageTitleCalu = 'iTaxi';
-                $rootScope.notify('The roadmap has been started!');
+                $rootScope.pageTitleCalu = '约约';
+                $rootScope.notify('路线开始!');
 
             });
 
@@ -225,18 +225,18 @@ angular.module('itaxiApp')
                 // TODO : when route has destroy.It will update status and clear route info in local storage.
                 $rootScope.pageTitleCalu = '';
                 var msg = '';
-                $rootScope.pageTitle = 'iTaxi - Home';
+                $rootScope.pageTitle = '约约 - 首页';
                 $rootScope.watingTaxi = false;
                 $rootScope.status.hasDriveAccept = false;
                 switch (data.status) {
                     case 2:
-                        msg = 'Roadmap ended!';
+                        msg = '线路结束!';
                         break;
                     case 3:
-                        msg = 'You canceled the successful route';
+                        msg = '您取消了线路';
                         break;
                     case 4:
-                        msg = 'The roadmap has been canceled taxi!. <br/> PBX Support: 19006789';
+                        msg = '司机取消了线路!. <br/> 电话支持: 4038183581';
                         break
                 }
 

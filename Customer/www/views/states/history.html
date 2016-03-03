@@ -1,4 +1,4 @@
-<ion-view title="历史路线图" class="history">
+<ion-view title="历史路线" class="history">
     <ion-content>
         <p ng-hide="checkHistory" style="
             text-align: center;
@@ -14,7 +14,7 @@
             <a class="item item-avatar" ng-repeat="history in listHistory" ng-click="selectHistory(history)">
                 <div class="infoRoutes"><p class="amout">{{history.amount | toCurrency}} K </p>
 
-                    <p class="distance"> {{history.distance / 1000}} km </p></div>
+                    <p class="distance"> {{history.distance / 1000}} 公里 </p></div>
 
                 <h2>Aunt: {{history.startPoint}}</h2>
                 <h2>Come: {{history.endPoint}}</h2>

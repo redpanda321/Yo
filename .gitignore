@@ -6,3 +6,4 @@
 /Customer/*.jsproj
 /Customer/node_modules
 /Customer/.vs
+/.idea

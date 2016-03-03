@@ -16,16 +16,16 @@ angular.module('itaxiApp')
                     $scope.registerProcess  = false;
 
                 } else if (!info || !info.password || !info.repassword || !info.username || !info.fullname) {
-                    $rootScope.notify('Please enter complete information', 1500);
+                    $rootScope.notify('请输入完整的信息', 1500);
 
                     $scope.registerProcess  = false;
                 } else if (info.password != info.repassword) {
-                    $rootScope.notify('2 Passwords do not match! please enter the exact', 1500);
+                    $rootScope.notify('密码不匹配，请重新输入', 1500);
 
                     $scope.registerProcess  = false;
                 } else {
                     var _loading = $ionicLoading.show({
-                        content: 'Subscribing ...',
+                        content: '注册中 ...',
                         showBackdrop: false
                     });
                     var uId = $auth.getAppRegisterInfo().id;
@@ -42,12 +42,12 @@ angular.module('itaxiApp')
                                 $auth.setAppRegister(result.data);
 
 //                                $scope.waitLogin = true;
-                                _loading.setContent('Are logged into the system ...');
+                                _loading.setContent('登录系统 ...');
 
                                 $auth.login(info.username, info.password, function (err, result) {
 
                                     if (err) {
-                                        _loading.setContent('Login failed ...');
+                                        _loading.setContent('登录失败 ...');
 
                                         $timeout(function () {
                                             _loading.hide();
@@ -55,7 +55,7 @@ angular.module('itaxiApp')
 
                                         //$scope.loginMessage = 'Đăng nhập thất bại !. </br> Vui lòng thử lại';
                                     } else {
-                                        _loading.setContent('logged in successfully ..');
+                                        _loading.setContent('登录成功 ..');
 
                                         $timeout(function () {
                                             _loading.hide();
@@ -73,11 +73,11 @@ angular.module('itaxiApp')
                                 $scope.registerProcess  = false;
                                 switch (result.message) {
                                     case 'REGISTER.ERR.REGISTED':
-                                        $rootScope.notify('Your device is already registered !\n');
+                                        $rootScope.notify('你的设备已经注册过 !\n');
                                         break;
 
                                     case 'REGISTER.ERR.USERNAME':
-                                            $rootScope.notify('This phone number has been used! ');
+                                            $rootScope.notify('此号码注册过! ');
                                         break;
                                 }
 

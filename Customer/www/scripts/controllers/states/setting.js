@@ -38,8 +38,8 @@ angular.module('itaxiApp')
                 $ionicActionSheet.show({
                     titleText: 'Rather avatar',
                     buttons: [
-                        { text: 'Take a new photo' },
-                        { text: 'From collection' }
+                        { text: '拍一张新照片' },
+                        { text: '从相册中选取' }
                     ],
                     cancelText: 'Cancel',
                     cancel: function () {
@@ -65,7 +65,7 @@ angular.module('itaxiApp')
             $scope.onFileSelect = function ($files, userInfo) {
 
                 $ionicLoading.show({
-                    content: 'Uploading .. ',
+                    content: '上载 .. ',
                     animation: 'fade-in',
                     showBackdrop: false,
                     maxWidth: 200
@@ -132,7 +132,7 @@ angular.module('itaxiApp')
 
             var upload = function (imageURI, userInfo) {
                 $ionicLoading.show({
-                    content: 'Uploading .. ',
+                    content: '上载中 .. ',
                     animation: 'fade-in',
                     showBackdrop: false,
                     maxWidth: 200
@@ -166,7 +166,7 @@ angular.module('itaxiApp')
                         if (response.success === true) {
                             $logger.info('upload', 'response.success', response.success);
                             $ionicLoading.show({
-                                content: 'Upload successful !',
+                                content: '上载成功 !',
                                 animation: 'fade-in',
                                 showBackdrop: false,
                                 maxWidth: 200
@@ -181,7 +181,7 @@ angular.module('itaxiApp')
                             });
                         } else {
                             $ionicLoading.show({
-                                content: 'Upload failed ! !',
+                                content: '上载失败! !',
                                 animation: 'fade-in',
                                 showBackdrop: false,
                                 maxWidth: 200
@@ -227,7 +227,7 @@ angular.module('itaxiApp')
             $scope.saveUserInfo = function (userInfo) {
                 $scope.disableButtonSave = true;
                 $ionicLoading.show({
-                    content: 'Please wait ..',
+                    content: '请稍等 ..',
                     animation: 'fade-in',
                     showBackdrop: false,
                     maxWidth: 200
@@ -251,7 +251,7 @@ angular.module('itaxiApp')
 
                         $ionicLoading.show({
 
-                            content: 'Update successful !'
+                            content: '更新成功 !'
 
                         });
                         setTimeout(function () {
@@ -261,7 +261,7 @@ angular.module('itaxiApp')
                     } else {
 
                         $ionicLoading.show({
-                            content: 'An error occurred !'
+                            content: '发生错误 !'
                         });
 
                         setTimeout(function () {

@@ -16,7 +16,7 @@ color: #fff;">这个区域没有车 <br>
 
                     <h2 ng-click="goToPage('app.driverInfo',{id : taxi.id})">{{taxi.fullname}} </h2>
 
-                    <p ng-click="goToPage('app.driverInfo',{id : taxi.id})">Groin: {{taxi.company.companyName}}</p>
+                    <p ng-click="goToPage('app.driverInfo',{id : taxi.id})">进入: {{taxi.company.companyName}}</p>
                     <button class="button button-positive" ng-click="showConfirmCall(taxi)"
                             ng-disabled="status.callTaxiProcess"><i class="ion-android-call"></i></button>
                 </a>
