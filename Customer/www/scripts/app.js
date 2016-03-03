@@ -232,7 +232,7 @@ angular.module('itaxiApp', [
                         controller: 'HomeCtrl'
                     }
                 },
-                title: "<span>HUB</span>TAXI"
+                title: "<span>约</span>一约"
             })
             .state('app.page2G', {
                 url: '/page2G',
@@ -242,7 +242,7 @@ angular.module('itaxiApp', [
                         controller: 'page2GCtrl'
                     }
                 },
-                title: 'iTaxi Home'
+                title: '约（2G）'
             })
             .state('app.register', {
                 url: '/register',
@@ -252,7 +252,7 @@ angular.module('itaxiApp', [
                         'controller': 'RegisterCtrl'
                     }
                 },
-                title: 'Register'
+                title: '注册'
             })
             .state('app.login', {
                 url: '/login',
@@ -262,7 +262,7 @@ angular.module('itaxiApp', [
                         controller: 'LoginCtrl'
                     }
                 },
-                title: 'Login'
+                title: '登录'
             })
             /*.state('app.support', {
              url: '/support',
@@ -281,7 +281,7 @@ angular.module('itaxiApp', [
                         controller: 'TaxiCompanyCtrl'
                     }
                 },
-                title: 'Contacts Taxi'
+                title: '联系人'
             })
             .state('app.bookmark', {
                 url: '/bookmark',
@@ -291,7 +291,7 @@ angular.module('itaxiApp', [
                         controller: 'BookmarkCtrl'
                     }
                 },
-                title: 'Favorite Places'
+                title: '常去地址'
             })
             .state('app.companyDetail', {
                 url: '/Company-detail/:id',
@@ -301,7 +301,7 @@ angular.module('itaxiApp', [
                         controller: 'companyDetailCtrl'
                     }
                 },
-                title: 'Info Taxi'
+                title: '车辆信息'
             })
             .state('app.history', {
                 url: '/history',
@@ -311,7 +311,7 @@ angular.module('itaxiApp', [
                         controller: 'HistoryCtrl'
                     }
                 },
-                title: 'History roadmap'
+                title: '历史路线'
             })
             .state('app.myTaxi', {
                 url: '/myTaxi',
@@ -321,7 +321,7 @@ angular.module('itaxiApp', [
                         controller: 'myTaxiCtrl'
                     }
                 },
-                title: 'My Taxi'
+                title: '我的路线'
             })
             .state('app.message', {
                 url: '/message',
@@ -331,7 +331,7 @@ angular.module('itaxiApp', [
                         controller: 'MessageCtrl'
                     }
                 },
-                title: 'Message'
+                title: '消息'
 
             })
             .state('app.messageDetail', {
@@ -342,7 +342,7 @@ angular.module('itaxiApp', [
                         controller: 'messageDetailCtrl'
                     }
                 },
-                title: 'Mailbox'
+                title: '信箱'
 
             })
             .state('app.setting', {
@@ -353,7 +353,7 @@ angular.module('itaxiApp', [
                         controller: 'SettingCtrl'
                     }
                 },
-                title: 'Installation'
+                title: '设置'
             })
             .state('app.listTaxiAccept', {
                 url: '/list-taxi-accept/:hasTaxi',
@@ -363,7 +363,7 @@ angular.module('itaxiApp', [
                         controller: 'ListTaxiAcceptCtrl'
                     }
                 },
-                title: 'List of taxi agree'
+                title: '可约车辆'
             })
             .state('app.driverInfo', {
                 url: '/driver-info/:id',
@@ -373,7 +373,7 @@ angular.module('itaxiApp', [
                         controller: 'DriverInfoCtrl'
                     }
                 },
-                title: 'Driver information'
+                title: '司机信息'
             })
             .state('app.address', {
                 url: '/address',
@@ -383,7 +383,7 @@ angular.module('itaxiApp', [
                         controller: 'addressCtrl'
                     }
                 },
-                title: 'Route calculation'
+                title: '路线计算'
             });
 
 
@@ -536,7 +536,7 @@ angular.module('itaxiApp', [
 
             $rootScope.mapLoading = function () {
                 $rootScope.status.showMapLoading = true;
-                $rootScope.mapLoadingContent = 'Đang tải bản đồ ...';
+                $rootScope.mapLoadingContent = '加载地图 ...';
             };
 
             $rootScope.hideMapLoading = function () {
@@ -554,7 +554,7 @@ angular.module('itaxiApp', [
 
                 $rootScope.status.showStatusBar = true;
                 if (!content) {
-                    $rootScope.statusContent = 'Đang tải dữ liệu ...';
+                    $rootScope.statusContent = '加载 ...';
                 } else {
                     $rootScope.statusContent = content;
                 }
@@ -592,7 +592,7 @@ angular.module('itaxiApp', [
              * */
             function out() {
                 navigator.notification.confirm(
-                    'You want to escape the application TaxiGo!', // message
+                    '你想退出约约吗!', // message
                     function (button) {
                         if (button == 1) {
                             if (navigator.app) {
@@ -605,8 +605,8 @@ angular.module('itaxiApp', [
                             }
                         }
                     },
-                    'Close applications',           // title
-                    ['exit', 'Come back']         // buttonLabels
+                    '关闭应用',           // title
+                    ['退出', '返回']         // buttonLabels
                 );
             }
 
@@ -615,7 +615,7 @@ angular.module('itaxiApp', [
                 if (navigator.notification) {
                     out();
                 } else {
-                    alert('Exit supported applications on the App! thank you');
+                    alert('退出! 谢谢');
                 }
             };
 
@@ -679,12 +679,12 @@ angular.module('itaxiApp', [
 
             $rootScope.checkConnection = function () {
                 if (navigator.network.connection.type == Connection.NONE) {
-                    alert('No internet access !');
+                    alert('无网络连接 !');
                     $state.go('contacts');
                     return false;
                 } else if (navigator.network.connection.type == Connection.CELL_2G) {
                     //alert('Connect your network is 2G! \ Navigate to list Taxi around');
-                    alert('Connection type is 2G');
+                    alert('连接是2G网络');
                     $state.go('contacts');
                     return false;
                 } else {
@@ -716,7 +716,7 @@ angular.module('itaxiApp', [
                     if (resp) {
                         $rootScope.isLogin = false;
                         $state.go('app.home');
-                        $rootScope.notify('Logout successful !');
+                        $rootScope.notify('退出成功!');
 
                     } else {
                     }
@@ -872,16 +872,16 @@ angular.module('itaxiApp', [
             $rootScope.callTaxiQuick = function (taxi) {
                 console.log('callTaxiQuick', 'start', taxi);
                 $ionicPopup.show({
-                    title: 'Driver : ' + taxi.taxi + " Groin: " + taxi.carLic,
-                    subTitle: 'What you want to call a taxi?',
+                    title: '司机 : ' + taxi.taxi + " 牌照: " + taxi.carLic,
+                    subTitle: '想约?',
                     scope: $rootScope,
                     buttons: [
                         {
-                            text: 'Later', onTap: function (e) {
+                            text: '等一会儿', onTap: function (e) {
                             //2
                         } },
                         {
-                            text: '<b>Pillow</b>',
+                            text: '<b>快约</b>',
                             type: 'button-positive',
                             onTap: function (e) {
                                 //1
@@ -909,7 +909,7 @@ angular.module('itaxiApp', [
             /*
              * Action when customer choose taxi
              * */
-            $rootScope.pageTitleCalu = "HubTaxi";
+            $rootScope.pageTitleCalu = "快约";
             $rootScope.chooseTaxi = function (taxiData) {
 
                 $rootScope.status.chooseTaxiProcess = true;
@@ -920,7 +920,7 @@ angular.module('itaxiApp', [
                         // TODO : Do something
                     } else {
                         $rootScope.watingTaxi = true;
-                        $rootScope.showStatus("Waiting for a taxi pickup ...", true);
+                        $rootScope.showStatus("稍等 ...", true);
 
                         if ($rootScope.stepDirection && $rootScope.distanceCheck) {
                             var statusBarContent = '';
@@ -955,7 +955,7 @@ angular.module('itaxiApp', [
                         /*$rootScope.idTaxi = taxiData.id;*/
 
 
-                        $rootScope.notify('Driver has received a request! please wait');
+                        $rootScope.notify('司机已经收到请求! 请稍等');
                         $state.go('app.home');
                     }
                 });
@@ -972,7 +972,7 @@ angular.module('itaxiApp', [
             });
 
             document.addEventListener("offline", function () {
-                $rootScope.statusContent = 'no network connection';
+                $rootScope.statusContent = '无网络连接';
             });
             $auth.setHeaderToken();
 

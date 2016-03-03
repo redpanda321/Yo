@@ -257,7 +257,7 @@ angular.module('itaxiApp')
                     var me = this;
                     google.maps.event.addListener(me.map, 'click', function (evt) { // Listen Evt click on Maps
                         me.directionsService = new google.maps.DirectionsService();
-                        if (window.confirm('Bạn muốn chọn địa điểm này ?')) {
+                        if (window.confirm('你要选择这个位置 ?')) {
 
                             var request = {
                                 origin: me.currentPointInputLocation, //me.LatLng, // Start Position
@@ -310,7 +310,7 @@ angular.module('itaxiApp')
                                     me.directionInfo = routes;
 
                                     $rootScope.bookmarked = false;
-                                    $rootScope.infoRouter = 'Ước lượng: ' + routes.legs[0].distance.text + ' - ' + $filter('toCurrency')(Math.round(routes.legs[0].distance.value / 1000) * 12000) + ' VNĐ';
+                                    $rootScope.infoRouter = '估计: ' + routes.legs[0].distance.text + ' - ' + $filter('toCurrency')(Math.round(routes.legs[0].distance.value / 1000) * 12000) + ' VNĐ';
 
                                     $rootScope.showStatus($rootScope.infoRouter);
                                     var point, route, points = [];
@@ -329,13 +329,13 @@ angular.module('itaxiApp')
 
                                                 gMaps.startPointMarker = L.marker(new L.LatLng(decodePath[i].lat(), decodePath[i].lng()), {
                                                     riseOnHover: true,
-                                                    alt: 'Điểm đi',
+                                                    alt: '点进去',
                                                     icon: L.icon({
                                                         iconUrl: './images/pin_blue.png',
                                                         iconSize: [48, 48],
                                                         popupAnchor: [0, -20]
                                                     })
-                                                }).addTo(me.map).bindPopup('Điểm đi :' + routes.legs[0].start_address);
+                                                }).addTo(me.map).bindPopup('点进去:' + routes.legs[0].start_address);
 
                                                 gMaps.map.panTo(new L.LatLng(decodePath[i].lat(), decodePath[i].lng()));
                                             }
@@ -348,13 +348,13 @@ angular.module('itaxiApp')
 
                                                 gMaps.endPointMarker = L.marker(new L.LatLng(decodePath[i].lat(), decodePath[i].lng()), {
                                                     riseOnHover: true,
-                                                    alt: 'Điểm đi',
+                                                    alt: '点进去',
                                                     icon: L.icon({
                                                         iconUrl: './images/pinIconPink.png',
                                                         iconSize: [48, 48],
                                                         popupAnchor: [0, -20]
                                                     })
-                                                }).addTo(me.map).bindPopup('Điểm đến :' + routes.legs[0].end_address);
+                                                }).addTo(me.map).bindPopup('目的地 :' + routes.legs[0].end_address);
                                             }
                                         }
                                     }
@@ -388,7 +388,7 @@ angular.module('itaxiApp')
 
                                             $rootScope.distanceCheck = routes.legs[0].distance.value;
                                             if (!$rootScope.status.hasRouter) {
-                                                $rootScope.pageTitleCalu = 'Ước lượng: ' + routes.legs[0].distance.text + ' - ' + $filter('toCurrency')(Math.round(routes.legs[0].distance.value / 1000) * 12000) + ' VNĐ';
+                                                $rootScope.pageTitleCalu = '估计: ' + routes.legs[0].distance.text + ' - ' + $filter('toCurrency')(Math.round(routes.legs[0].distance.value / 1000) * 12000) + ' VNĐ';
                                             }
 
                                             $rootScope.stepDirection = routes.legs[0].steps;
@@ -413,7 +413,7 @@ angular.module('itaxiApp')
                 },
                 getInfoBox: function (marker) {
                     var me = this;
-                    google.maps.event.addListener(marker, 'click', function () { // Bắt sự kiện của người dùng trên bản đồ
+                    google.maps.event.addListener(marker, 'click', function () { //获取用户事件在地图上
 
                         gMaps.infoBox.close();
                         var option = {

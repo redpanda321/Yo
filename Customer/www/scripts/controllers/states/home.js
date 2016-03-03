@@ -129,15 +129,15 @@ angular.module('itaxiApp')
 
                     $ionicPopup.show({
                         templateUrl: 'views/utils/getPhoneNumber.html',
-                        title: 'Enter your phone number',
-                        subTitle: '(Just enter first)',
+                        title: '请输入手机号',
+                        subTitle: '(输入开头数字)',
                         scope: $scope,
                         buttons: [
-                            { text: 'Cancel', onTap: function (e) {
+                            { text: '取消', onTap: function (e) {
                                 return true;
                             } },
                             {
-                                text: '<b>Comfirm</b>',
+                                text: '<b>确认</b>',
                                 type: 'button-positive',
                                 onTap: function (e) {
 
@@ -195,7 +195,7 @@ angular.module('itaxiApp')
                
                // bookmar load,
                 $rootScope.loadingIndicator = $ionicLoading.show({
-                    template: 'Adding favorite addresses...',
+                    template: '加入地址簿...',
                     noBackdrop: true
                 });
 
@@ -221,7 +221,7 @@ angular.module('itaxiApp')
                     for (var i = 0; i < appDataStore.listBookmark.all().length; i++) {
                         if (appDataStore.listBookmark.all()[i].bookmarkPoint == bookmarkPoint) {
                                $ionicLoading.hide();
-                            $rootScope.notify('You saved this address');
+                            $rootScope.notify('此地址已收藏');
                             flag = false;
                             return;
                         }
@@ -232,7 +232,7 @@ angular.module('itaxiApp')
 
                             if (err) {
                                    $ionicLoading.hide();
-                                $rootScope.notify('An error occurred!. Please try again later');
+                                $rootScope.notify('发生错误!. 请稍后再试');
                                 $logger.info('addBookmarks', 'err', err);
                             } else {
                                 $logger.info('addBookmarks', 'resp', result);
@@ -244,14 +244,14 @@ angular.module('itaxiApp')
                                     $scope.stylebookmark1 = 'booksave';
                                 }
                                 $ionicLoading.hide();
-                                $rootScope.notify('Save successfully address!');
+                                $rootScope.notify('地址收藏成功!');
 
                                 $scope.notBookmark = false;
                             }
                         })
                     }
                 } else {
-                    $rootScope.notify('Please enter the address');
+                    $rootScope.notify('请输入地址');
                 }
             };
 
@@ -289,7 +289,7 @@ angular.module('itaxiApp')
                         taxi.updateRoute(taxi.getDirectionInfo()[0].id, {status: 3, deleteReason: deleteReason}, function (error, result) {
                             if (result) {
                                 /*$rootScope.tooltip.open('Hủy lộ trình thành công');*/
-                                $rootScope.notify('Cancellations successful route');
+                                $rootScope.notify('取消线路成功');
 
                                 taxi.setCurrentStatus(0);
                                 taxi.setDirectionInfo(null);
@@ -336,22 +336,22 @@ angular.module('itaxiApp')
 
                 $ionicPopup.show({
                     templateUrl: 'views/utils/destroyModal.html',
-                    title: 'Confirm cancellation roadmap',
-                    subTitle: 'Enter a reason',
+                    title: '确认取消线路',
+                    subTitle: '原因',
                     scope: $scope,
                     buttons: [
-                        { text: 'Not', onTap: function (e) {
+                        { text: '不', onTap: function (e) {
                             return true;
                         } },
                         {
-                            text: '<b>Cancel</b>',
+                            text: '<b>取消</b>',
                             type: 'button-positive',
                             onTap: function (e) {
                                 if ($scope.deleteInfo.deleteReason != null) {
                                     $scope.destroyRoute($scope.deleteInfo);
                                     return true;
                                 } else {
-                                    $rootScope.notify('Please select the reason!!!', 1000);
+                                    $rootScope.notify('请选择原因!!!', 1000);
                                     setTimeout(function () {
                                         $scope.openConfirmDestroyRoute();
                                     }, 1000)
@@ -377,7 +377,7 @@ angular.module('itaxiApp')
 
             window.socketIo.on('send:quick:taxi:reject', function (data) {
                 $rootScope.hideStatus();
-                $rootScope.notify('Taxi refused your request.');
+                $rootScope.notify('司机拒绝了您的请求.');
                 $rootScope.watingTaxi = false;
             });
 
@@ -420,7 +420,7 @@ angular.module('itaxiApp')
 
             $scope.goToCenter = function () { // go to current position on maps
 
-                $rootScope.notify('Find locations', 2000);
+                $rootScope.notify('寻找位置', 2000);
 
                 $logger.info('gotoCenter', 'start', true);
                 navigator.geolocation.getCurrentPosition(function (position) { // GET POSITION SUCCESS
@@ -540,7 +540,7 @@ angular.module('itaxiApp')
 
             var loadBookmark = function () {
 
-                $logger.info("loadBookmark", "Bookmark loading.....", true);
+                $logger.info("loadBookmark", "加载收藏夹.....", true);
 
                 var userId = $auth.getAppRegisterInfo().id;
                 var filter = [
@@ -558,11 +558,9 @@ angular.module('itaxiApp')
 
                     if ($rootScope.showPlace == 0) {
                         $rootScope.resultPlace = [
-                            {description: 'Crossroads Co Nhue - Hanoi'},
-                            {description: 'Royal City - Hanoi'},
-                            {description: 'Peace Park - Hanoi'},
-                            {description: 'National Convention Center - Hanoi'},
-                            {description: 'VNT Tower Crossroad - Hanoi'}
+                            {description: 'DownTown - Calgary'},
+                            {description: 'Chinook - Calgary'}
+                            
                         ];
                     }
                 }, function (err) {
@@ -575,11 +573,8 @@ angular.module('itaxiApp')
 
                 if ($rootScope.showPlace == 0) {
                     $rootScope.resultPlace = [
-                        {description: 'Crossroads Co Nhue - Hanoi'},
-                        {description: 'Royal City - Hanoi '},
-                        {description: 'Peace Park - Hanoi'},
-                        {description: 'National Convention Center - Hanoi'},
-                        {description: 'VNT Tower Crossroad - Hanoi'}
+                        { description: 'DownTown - Calgary' },
+                        { description: 'Chinook - Calgary' }
                     ];
                 }
             } else {
@@ -659,12 +654,12 @@ angular.module('itaxiApp')
             $scope.showPrompt = function () {
                 $ionicPopup.prompt({
                     title: 'Note',
-                    subTitle: 'Enter a message sent to the driver! (Waiting hall, Lane 155....)'
+                    subTitle: '发消息给司机! )'
                 }).then(function (res) {
                     if (res) {
                         sendMessage(res);
                     } else {
-                        $rootScope.notify('Please enter text', 1000);
+                        $rootScope.notify('请输入消息', 1000);
                     }
                 });
             };
@@ -697,7 +692,7 @@ angular.module('itaxiApp')
                 $ionicSlideBoxDelegate.$getByHandle('route').slide(2, 300);
             };
 
-            $ionicModal.fromTemplateUrl('./views/states/child/router.html', {
+            $ionicModal.fromTemplateUrl('./views/states/child/0:d/M/yyyy HH:mm:ss:ffffff', {
                 scope: $scope,
                 animation: 'slide-in-up',
                 focusFirstInput: true

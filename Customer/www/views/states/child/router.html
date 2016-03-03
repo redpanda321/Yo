@@ -1,6 +1,6 @@
 <ion-modal-view>
     <ion-header-bar class="bar-energized">
-        <h1 class="title">Information</h1>
+        <h1 class="title">线路</h1>
         <button class="button button-clear button-primary" ng-click="closeModalInput()">
             Come back</button>
     </ion-header-bar>
@@ -19,12 +19,12 @@
 
                                         <input type="text" class="form-control" id="originInput" select-on-click
                                                ng-model="startPoint" ng-change="inputOnChange('originInput')"
-                                               ng-focus="onFocus('originInput')" placeholder="Enter now">
+                                               ng-focus="onFocus('originInput')" placeholder="输入">
 
 
                                     </label>
                                     <button class="button button-small">
-                                        Search
+                                       搜索
                                     </button>
                                 </div>
 
@@ -63,7 +63,7 @@
 
                                     </label>
                                     <button class="button button-small">
-                                        Tìm kiếm
+                                        搜素
                                     </button>
                                 </div>
 
@@ -87,7 +87,7 @@
 
 
                 <ion-slide>
-                    <div class="box yellow"><h5 style="margin-top: 20px;">or travel locations</h5>
+                    <div class="box yellow"><h5 style="margin-top: 20px;">去过的地方</h5>
                         <li class="item item-checkbox" ng-repeat="place in listHistory" >
 
                             <a ng-click="selectAdd(place);closeModalInput()">
@@ -106,15 +106,15 @@
         <div class="tabs tabs-icon-top tab-footer-input bar-balanced">
             <a class="tab-item" ng-class="classRouter1" ng-click="slideOne()">
                 <i class="icon ion-flag"></i>
-                Current Score
+                当前位置
             </a>
             <a ng-click="slideTwo()" class="tab-item" ng-class="classRouter2">
                 <i class="icon ion-flag"></i>
-                Destination
+               目的地
             </a>
             <a ng-click="slideThree()" class="tab-item" ng-class="classRouter3">
                 <i class="icon ion-model-s"></i>
-                Hay đi
+                出发
             </a>
         </div>
     </ion-footer-bar>

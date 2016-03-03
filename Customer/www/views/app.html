@@ -41,7 +41,7 @@
             <div class="item item-avatar" ng-if="!isLogin" style="padding: 0;">
 
 
-                <h2 style="text-align: center;text-transform: uppercase; font-weight: bold;"><span style="color: #DA3722;">Hub</span> Taxi</h2>
+                <h2 style="text-align: center;text-transform: uppercase; font-weight: bold;"><span style="color: #DA3722;">约</span> 起来！</h2>
             </div>
 
             <div class="item item-avatar" ng-if="isLogin">
@@ -57,19 +57,19 @@
 
         <ul class="list">
             <a menu-close ui-sref-active="li-active" class="item-list" ui-sref="app.home">
-                <i class="ion-android-call royal" style="font-size: 20px;"></i> Call taxi
+                <i class="ion-android-call royal" style="font-size: 20px;"></i> 约车
             </a>
 
 
             <a ui-sref-active="li-active" class="item-list" menu-toggle="left" ui-sref="app.message">
                 <i class="icon ion-email energized"></i>
-                Notification
+                通知
                 <!--<span class="badge badge-assertive">0</span>-->
             </a>
 
             <a ui-sref-active="li-active" ui-sref="app.taxicompany" class="item-list" menu-toggle="left">
                 <i class="icon ion-chatbubble-working positive"></i>
-                Contacts
+                联系人
 
             </a>
 
@@ -78,7 +78,7 @@
             </a>-->
             <a ui-sref-active="li-active" ui-sref="app.bookmark" class="item-list" menu-toggle="left">
                 <i class="icon ion-star calm"></i>
-                Address favorites
+                收藏
             </a>
 <!--
             <a ng-if="isLogin" ui-sref-active="li-active" ui-sref="app.myTaxi" class="item-list" menu-toggle="left">
@@ -89,7 +89,7 @@ My Taxi
 
             <a ng-if="isLogin" ui-sref-active="li-active" ui-sref="app.history" class="item-list" menu-toggle="left">
                 <i class="ion-android-folder icon"></i>
-                Polite
+                历史
 
             </a>
 
@@ -107,19 +107,19 @@ My Taxi
               </li>-->
             <a ui-sref="app.login" ui-sref-active="li-active" class="item-list" menu-toggle="left" ng-if="!isLogin">
                 <i class="icon ion-person-stalker balanced"></i>
-                Login
+               登录
             </a>
 
             <a ui-sref-active="li-active" ui-sref="app.setting" class="item-list" menu-toggle="left" ng-if="isLogin">
                 <i class="ion-android-settings royal"></i>
 
-                account information
+               设置
             </a>
 
             <a class="item-list" menu-toggle="left" ng-click="logout()" ng-if="isLogin">
                 <i class="icon ion-share energized"></i>
 
-                Log out
+                退出
             </a>
 
 
@@ -133,7 +133,7 @@ My Taxi
     <ion-header-bar class="bar-dark">
 
         <h2 class="text-center see-taxi" ng-if="!status.hasRouter">
-            <i class="ion-model-s ion"></i> &nbsp Taxi around
+            <i class="ion-model-s ion"></i> &nbsp 附近车辆
         </h2>
 
 
@@ -141,14 +141,14 @@ My Taxi
 
 
 
-        <h2 class="text-center see-taxi" ng-if="status.hasRouter"><i class="ion-map"></i>Subscribe roadmap</h2>
+        <h2 class="text-center see-taxi" ng-if="status.hasRouter"><i class="ion-map"></i>制定路线</h2>
 
     </ion-header-bar>
     <!--ng-if="!status.hasRouter"-->
     <ion-content>
         <ion-refresher on-refresh="doRefresh()"
-                       pulling-text="Pull down to update ..."
-                       refreshing-text="Update the list!"
+                       pulling-text="下拉更新 ..."
+                       refreshing-text="更新列表!"
                        refreshing-icon="ion-loading-c"
                        class="refresher">
         </ion-refresher>
@@ -167,7 +167,7 @@ My Taxi
 
                                 <h2>{{item.taxi}} : {{item.carLic}} &nbsp;&nbsp;</h2>
 
-                                <p>Distance: {{item.distance}} Km</p>
+                                <p>Distance: {{item.distance}} 公里</p>
 
                                 <div class="icon-menu-right">
                                     <!--<i class="ion-ios7-telephone calm"></i> -->
@@ -180,7 +180,7 @@ My Taxi
                         <div class="box default" style="margin: 6px 0 5px 0;">
                             <button class="button button-assertive" ng-click="quickChooseTaxi(item)"
                                     ui-sref="app.home" ng-disabled="quickChooseTaxiProcess">
-                                Gọi taxi
+                                约
                             </button>
                         </div>
                     </ion-slide>

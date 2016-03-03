@@ -13,15 +13,7 @@ z-index: 9;
 <div class="overlay" style="background: transparent;" ng-if="status.showCounter">
 </div>
 
-
-
-
-
-
-
-
-
-
+    
 
 <div id="slide4" ng-if="status.showCounter">
 
@@ -37,10 +29,10 @@ z-index: 9;
 
 
 <div class="swipe-home-left">
-    swipe
+    滑动
 </div>
 <div class="swipe-home-right">
-    swipe
+    滑动
 </div>
 
 <div class="overlay-full">
@@ -65,12 +57,12 @@ z-index: 9;
 
                             <input type="radio" id="radio1" name="radios" value="all" checked="checkek">
                             <label for="radio1" class="fake-radio"></label>
-                            <label for="radio1" class="radio2">4 Chỗ</label>
+                            <label for="radio1" class="radio2">4 坐</label>
                         </div>
                         <div class="radio1" ng-click="checkSeat(0)">
                             <input type="radio" id="radio2" name="radios" value="false">
                             <label for="radio2" class="fake-radio"></label>
-                            <label for="radio2" class="radio2">7 Chỗ</label>
+                            <label for="radio2" class="radio2">7 坐</label>
                         </div>
                     </div>
                 </div>
@@ -89,7 +81,7 @@ z-index: 9;
                                     <p style="color: #66cc33;
 font-size: 9px;
 text-transform: uppercase;
-font-weight: 600;">Current Score</p>
+font-weight: 600;">当前位置</p>
 
                                     <p style="color: #000;
 font-size: 14px;
@@ -113,7 +105,7 @@ font-weight: 400;">{{startPoint}}</p>
                                     <p style="color: #66cc33;
 font-size: 9px;
 text-transform: uppercase;
-font-weight: 600;">Places to</p>
+font-weight: 600;">目的地</p>
 
                                     <p style="color: #999;
 font-size: 12px;">{{endPoint}}</p>
@@ -129,14 +121,14 @@ font-size: 12px;">{{endPoint}}</p>
 
     <div ng-show="!status.hasRouter" style="width: 100%;margin-top: 70px;">
         <button class="button button-full button-assertive" ng-click="callTaxi()" ng-disabled="status.callTaxiProcess">
-            <i class="ion ion-android-call"></i>CALL TAXI
+            <i class="ion ion-android-call"></i>约车
         </button>
     </div>
 
 
     <div ng-show="status.hasDriveAccept" style="width: 100%;margin-top: 70px;margin-left:10px">
         <button class="button  button-full bar-balanced" ng-click="$state.go('app.listTaxiAccept', {hasTaxi: true})">
-            <i class="ion ion-document-text"></i>TAXI AGREE
+            <i class="ion ion-document-text"></i>司机回应
         </button>
     </div>
 
@@ -149,20 +141,20 @@ font-size: 12px;">{{endPoint}}</p>
             <li>
                 <label class="checkbox" ng-show="status.hasRouter">
                     <input type="checkbox" ng-change="toggelPinPosition()" ng-model="status.pinPosition">
-                    Follow
+                    跟随
                 </label>
             </li>
             <li>
                 <a ng-click="openConfirmDestroyRoute()">
                     <i class="ion-close-circled"></i>
 
-                    <p>Cancel route</p></a>
+                    <p>取消线路</p></a>
             </li>
             <li>
                 <a ng-click="goToPage('app.driverInfo',{id : idTaxi})">
                     <i class="ion ion-model-s"></i>
 
-                    <p>Driver</p>
+                    <p>司机</p>
                 </a>
             </li>
         </ul>
@@ -199,15 +191,6 @@ right: 7px;"></i>
 
 </ion-content>
 </ion-view>
-
-
-
-
-
-
-
-
-
 
 
 <style>
