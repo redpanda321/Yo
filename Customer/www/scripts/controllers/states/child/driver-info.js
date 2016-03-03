@@ -14,7 +14,7 @@ angular.module('itaxiApp')
 
             var loadDriverInfo = function () {
 
-                $rootScope.showStatus('Obtaining information..');
+                $rootScope.showStatus('正在获取信息..');
 
                 if (appDataStore.taxiInfo.size() > 0 && appDataStore.taxiInfo.get(driverID)) {
                     $scope.infomation = appDataStore.taxiInfo.get(driverID);
@@ -63,7 +63,7 @@ angular.module('itaxiApp')
 
                             //$ionicLoading.hide();
                         } else {
-                          $rootScope.showStatus('Get information failure',1400);
+                          $rootScope.showStatus('获取信息失败',1400);
                         }
                     });
                 }
@@ -95,15 +95,15 @@ angular.module('itaxiApp')
                         $restful.delete({table: 'MyTaxi', id: resp.data[0].id}, function (resp) {
                             if (resp.success) {
                                 $scope.removeMyTaxiProcess = false;
-                                $rootScope.notify('Taxi deleted successfully');
+                                $rootScope.notify('车辆删除成功');
                                 $scope.canAddTaxi = true;
                             } else {
-                                $rootScope.notify('An error has occurred !');
+                                $rootScope.notify('发生一个错误 !');
                             }
                         });
                     }else {
                         $scope.removeMyTaxiProcess = false;
-                        $rootScope.notify('There is a problem! Please try again later .');
+                        $rootScope.notify('现在有问题.请稍后再试.');
                     }
                 });
 
@@ -145,7 +145,7 @@ angular.module('itaxiApp')
 
 
             $scope.addMyTaxi = function (taxiInfo) {
-                $rootScope.notify('adding ..', true);
+                $rootScope.notify('添加 ..', true);
 
                 var data = {
                     customer: $auth.getAppRegisterInfo().id,

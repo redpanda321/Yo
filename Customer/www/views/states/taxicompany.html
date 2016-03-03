@@ -1,4 +1,4 @@
-<ion-view title="List of taxi companies" class="taxicompany">
+<ion-view title="公司列表" class="taxicompany">
 
     <ion-content padding="true" class="company-ios">
 
@@ -6,7 +6,7 @@
             <div class="list list-inset">
                 <label class="item item-input">
                     <i class="icon ion-ios7-search placeholder-icon"></i>
-                    <input type="text" placeholder="Search" ng-model="search">
+                    <input type="text" placeholder="搜索" ng-model="search">
                 </label>
             </div>
         </div>
@@ -14,7 +14,7 @@
             <a class="item item-avatar" ng-repeat="data in listTaxiGroup | filter:search">
                 <img ng-src="{{data.logo}}">
                <h2>{{data.group}}</h2>
-                <p>Hotline : {{data.call}}</p>
+                <p>热线 : {{data.call}}</p>
                 <i class="ion-android-call" ng-click="showConfirm(data)"></i>
             </a>
         </div>

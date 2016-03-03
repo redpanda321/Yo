@@ -6,8 +6,8 @@ background-color: #6c3;
 margin: 0;
 padding: 5px;
 font-size: 13px;
-color: #fff;">There are no taxis in the area <br>
-            accept requests !.</p>
+color: #fff;">这个区域没有车 <br>
+            接收请求 !.</p>
 
         <div class="taxi-accept" ng-if="$stateParams.hasTaxi == 'true'">
             <div class="list">
@@ -23,8 +23,7 @@ color: #fff;">There are no taxis in the area <br>
 
             </div>
             <div class="text-center">
-                <a style="text-decoration: initial;" ui-sref="app.home"><i class="ion-android-arrow-back"></i> Quay trở
-                    lại</a>
+                <a style="text-decoration: initial;" ui-sref="app.home"><i class="ion-android-arrow-back"></i> 返回</a>
             </div>
         </div>
 
@@ -37,7 +36,7 @@ color: #fff;">There are no taxis in the area <br>
 
                     <h2>{{list.group}}</h2>
 
-                    <p>Hotline : {{list.call}}</p>
+                    <p>热线 : {{list.call}}</p>
                     <i class="ion-android-call" ng-click="showConfirm(list)"></i>
                 </a>
             </div>

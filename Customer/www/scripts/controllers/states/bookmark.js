@@ -23,8 +23,8 @@ angular.module('itaxiApp')
 
             $scope.deleteBookmark = function (bookmark) {
                 $ionicPopup.confirm({
-                    title: 'Clear Address favorites',
-                    content: 'Are you sure you want to delete this Bookmark? '
+                    title: '清理收藏',
+                    content: '您确定删除? '
                 }).then(function (res) {
                     if (res) {
                         bookmark.destroy(function (err, result) {
@@ -48,24 +48,24 @@ angular.module('itaxiApp')
 
                 $ionicPopup.show({
                     templateUrl: 'views/utils/addBookmarkModal.html',
-                    title: 'Create a favorite',
+                    title: '创建收藏',
                     /*subTitle: 'WPA2',*/
                     scope: $scope,
                     buttons: [
                         {
-                            text: 'Cancel',
+                            text: '取消',
                             onTap: function (e) {
                                 return true;
                             }
                         },
                         {
-                            text: '<b>Agree</b>',
+                            text: '<b>同意</b>',
                             type: 'button-positive',
                             onTap: function (e) {
                                 if (Object.keys($scope.bookmarkItem).length > 0) {
                                     return $scope.bookmarkItem;
                                 } else {
-                                    alert('Please enter a full');
+                                    alert('请输入完整');
                                     return false;
                                 }
                             }
@@ -86,14 +86,14 @@ angular.module('itaxiApp')
 
             $scope.selectBookmark = function (data) {
                 $ionicActionSheet.show({
-                    titleText: 'Address favorites',
+                    titleText: '常用地址',
                     buttons: [
-                        { text: 'Select as destination' }
+                        { text: '选择目的地' }
                         /* { text: 'Chọn làm điểm đi' },
                          { text: 'Sửa' }*/
                     ],
-                    destructiveText: 'Erase',
-                    cancelText: 'Cancel',
+                    destructiveText: '清除',
+                    cancelText: '取消',
                     cancel: function () {
                         console.log('CANCELLED');
                     },
@@ -131,13 +131,13 @@ angular.module('itaxiApp')
                     var saveItem = new $baseModel('Bookmarks', bookmarkItem);
                     saveItem.save(function (err, result) {
                         if (err) {
-                            $rootScope.notify('Save address failures!');
+                            $rootScope.notify('保存地址失败!');
                             $logger.info('addBookmarks', 'err', err);
                         } else {
                             /*$scope.listBookmarks.push(result);*/
                             $rootScope.bookmarked = true;
                             $logger.info('addBookmarks', 'resp', result);
-                            $rootScope.notify('Save successfully address!');
+                            $rootScope.notify('保存地址成功!');
                             $scope.quickstylebookmark = 'booksave';
                             console.log('Save successfully address!');
                             $scope.notBookmark = false;
@@ -150,7 +150,7 @@ angular.module('itaxiApp')
                         }
                     })
                 } else {
-                    $rootScope.notify('Please enter complete information');
+                    $rootScope.notify('请输入完整信息');
                 }
             };
 

@@ -26,20 +26,20 @@
                 <div class="list">
                     <a class="item item-icon-left">
                         <i class="icon ion-pricetag calm"></i>
-                        Groin: {{infomation[0].company.companyName}}
+                        公司名称: {{infomation[0].company.companyName}}
                     </a>
                     <a class="item item-icon-left">
                         <i class="icon ion-model-s calm"></i>
-                        Range of vehicle:{{infomation[0].type.carMarker}}
+                        车辆型号:{{infomation[0].type.carMarker}}
                     </a>
                     <a class="item item-icon-left" href="tel:{{infomation[0].phone}}">
                         <i class="icon ion-iphone calm"></i>
-                        Phone number:{{infomation[0].phone}}
+                        电话号码:{{infomation[0].phone}}
                     </a>
                     <a class="item item-icon-left ">
                         <i class="icon ion-card calm"></i>
 
-                        License plate: {{infomation[0].username}}
+                        车牌: {{infomation[0].username}}
                     </a>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                 <button class="button button-block button-balanced" ng-click="chooseTaxi(infomation[0])"
                         ng-disabled="status.chooseTaxiProcess">
                     <i class="ion-ios7-telephone"></i>
-                    Accept Taxi
+                    接受车辆
                 </button>
             </div>
 
@@ -58,14 +58,14 @@
             <div class="call-info" ng-if="!status.hasRouter && !status.hasDriveAccept">
                 <button class="button button-block button-balanced" ng-click="quickChooseTaxi(infomation[0])"
                         ng-disabled="status.chooseTaxiProcess">
-                    <i class="ion-ios7-telephone"></i> Taxi call
+                    <i class="ion-ios7-telephone"></i> 约车
                 </button>
             </div>
 
             <div class="call-info">
                 <button class="button button-block bar-calm" ng-show="canAddTaxi"
                         ng-click="addMyTaxi(infomation[0])">
-                    <i class="ion-person-add"></i> Add My Taxi
+                    <i class="ion-person-add"></i> 添加到我的车辆
                 </button>
             </div>
 
@@ -73,7 +73,7 @@
             <div class="call-info">
                 <button class="button button-block bar-calm" ng-hide="canAddTaxi" ng-disabled="removeMyTaxiProcess"
                         ng-click="removeMyTaxi()">
-                    <i class="ion-minus-circled"></i> Delete my driver
+                    <i class="ion-minus-circled"></i> 删除我的车辆
                 </button>
             </div>
 
@@ -81,7 +81,7 @@
             <div class="call-info" ng-if="status.hasRouter">
                 <button class="button button-block button-balanced" ng-click="callTaxiPhone(infomation[0])">
                   <i class="ion-ios7-telephone"></i>
-                    Personal phone calls
+                    呼叫
                 </button>
             </div>
 

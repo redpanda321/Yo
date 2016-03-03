@@ -19,23 +19,23 @@
             <a class="item item-thumbnail-left" ng-click="filterMessage(0)" ng-class="(systemMessageStatus) ? 'active' : ''">
                 <img src="./images/logo-new.png" alt=""/>
 
-                <h2>System</h2>
+                <h2>系统</h2>
 
-                <p>Notifications from the system</p>
+                <p>系统通知</p>
                 <button class="button button-positive">
                     {{systemUnread}}
-                    new notification
+                    新消息
                 </button>
             </a>
             <a class="item item-thumbnail-left " ng-click="filterMessage(1)" ng-class="(taxiCompanyStatus) ? 'active' : ''">
                 <img src="./images/group.png" alt=""/>
 
-                <h2>Taxi companies</h2>
+                <h2>公司</h2>
 
                 <p>
-                    Notice from the company</p>
+                    公司通知</p>
                 <button class="button button-calm">
-                    {{companyUnread}} new notification
+                    {{companyUnread}} 新消息
                 </button>
             </a>
         </div>

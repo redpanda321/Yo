@@ -11,15 +11,15 @@
     <label>
         <select ng-model="deleteInfo.deleteReason" class="form-control select--large">
             <option value="" selected="selected">Select a reason: </option>
-            <option>The unexpected can not go Taxis</option>
-            <option>Take a taxi to one another time</option>
-            <option>Time to pick up too slow</option>
-            <option>Other reasons</option>
+            <option>到不了</option>
+            <option>改时间了</option>
+            <option>太慢</option>
+            <option>其他原因</option>
         </select>
     </label>
 </div>
 
-<div class="group-control" ng-if="deleteInfo.deleteReason == 'Lý do khác'">
-    <label>Enter a reason : </label>
+<div class="group-control" ng-if="deleteInfo.deleteReason == '其他原因'">
+    <label>输入一个原因 : </label>
     <input type="text" class="light-input full form-control" ng-model="deleteInfo.otherReason">
 </div>

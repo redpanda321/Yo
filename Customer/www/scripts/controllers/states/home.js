@@ -26,8 +26,8 @@ angular.module('itaxiApp')
 
 
             $scope.settingsList = [
-                { text: "hide-footer active", checked: false },
-                { text: "custom class my-footer active", checked: false }
+                { text: "页脚激活", checked: false },
+                { text: "定制页脚激活", checked: false }
             ];
 
 
@@ -266,7 +266,7 @@ angular.module('itaxiApp')
                 /*$rootScope.tooltip.open('Lộ trình này sẽ kết thúc sau 10s', 5000);*/
 
                 var destroyLoading = $ionicLoading.show({
-                    content: '<i class="ion-loading-c"></i> <br/>Đang hủy lộ trinh',
+                    content: '<i class="ion-loading-c"></i> <br/>取消路线',
                     animation: 'fade-in',
                     showBackdrop: false,
                     maxWidth: 200

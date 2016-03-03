@@ -1,15 +1,15 @@
-<ion-view title="Register" class="register">
+<ion-view title="注册" class="register">
     <ion-content padding="false">
 
         <div class="list list-inset">
             <label class="item item-input item-stacked-label">
-                <span class="input-label">First and last name</span>
-                <input type="text" placeholder="Nguyen Van A" ng-model="registerData.fullname">
+                <span class="input-label">姓名</span>
+                <input type="text" placeholder="Tony" ng-model="registerData.fullname">
             </label>
             <label class="item item-input item-stacked-label">
                 <span class="input-label">
 phone number</span>
-                <input type="tel" placeholder="099099909"  ng-model="registerData.username">
+                <input type="tel" placeholder="4038183581"  ng-model="registerData.username">
             </label>
             <label class="item item-input item-stacked-label">
                 <span class="input-label">password</span>
@@ -35,7 +35,7 @@ Enter the password</span>
 
         </div>
         <div style="padding: 0 10px;">
-            <button class="button button-block button-positive" ng-click="updateUserInfo(registerData)" ng-disabled="registerProcess">Register</button>
+            <button class="button button-block button-positive" ng-click="updateUserInfo(registerData)" ng-disabled="registerProcess">注册</button>
         </div>
 
     </ion-content>

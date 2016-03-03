@@ -59,23 +59,23 @@ angular.module('itaxiApp')
             $scope.filterStatus = function (stt){
                 switch(stt){
                     case 0:
-                        return 'Deserved';
+                        return '接受';
                         break;
 
                     case 1:
-                        return 'Running';
+                        return '运行中';
                         break;
 
                     case 2:
-                        return 'Complete';
+                        return '完成';
                         break;
 
                     case 3:
-                        return 'Canceled by the customer';
+                        return '被客户取消';
                         break;
 
                     case 4:
-                        return 'Canceled by the driver';
+                        return '被司机取消';
                         break;
 
 
@@ -98,9 +98,9 @@ angular.module('itaxiApp')
                     $scope.addReportProcess = false;
 
                     if(!err){
-                        $rootScope.notify('Your response has been sent !');
+                        $rootScope.notify('您的回应被发送!');
                     }else {
-                        $rootScope.notify('Error! please try again later ');
+                        $rootScope.notify('错误!请稍后再试 ');
                     }
                 })
             };
@@ -120,10 +120,10 @@ angular.module('itaxiApp')
                 $ionicActionSheet.show({
                     /*titleText: 'Lịch sử lộ trình',*/
                     buttons: [
-                        { text: 'See details' }
+                        { text: '见详情' }
                     ],
-                    destructiveText: 'Delete this roadmap',
-                    cancelText: 'Cancel',
+                    destructiveText: '删除路线',
+                    cancelText: '取消',
                     cancel: function () {
                         console.log('CANCELLED');
                     },
@@ -139,10 +139,10 @@ angular.module('itaxiApp')
                     },
                     destructiveButtonClicked: function () {
                         if (routes.status == 0 || routes.status == 1) {
-                            $rootScope.notify('Roadmap unfinished, can not erase');
+                            $rootScope.notify('线路未完成, 不能清除');
                         } else {
 
-                            $rootScope.notify('deleting ..', true);
+                            $rootScope.notify('删除 ..', true);
 
 
                             routes.status = 5;

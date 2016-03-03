@@ -928,6 +928,10 @@ angular.module('itaxiApp', [
                             var res = Number(distance / 1000);
 
                             $rootScope.checkcompany = true;
+
+                            statusBarContent = taxiData.company.companyName + " : " + res + " 每公里:" + taxiData.company.firstPrice + " 元";
+
+                            /*
                             if (res <= taxiData.company.firstKm) {
 
                                 statusBarContent = taxiData.company.companyName + " : " + res + " Km - Old :" + taxiData.company.firstPrice + " CNY";
@@ -939,6 +943,7 @@ angular.module('itaxiApp', [
                                     + (taxiData.company.middleKm - taxiData.company.firstKm) * taxiData.company.firstPrice
                                         + (res - taxiData.company.middleKm) * taxiData.company.lastPrice), "CNY");
                             }
+                            */
 
                             /*setTimeout(function () {*/
 
@@ -955,7 +960,7 @@ angular.module('itaxiApp', [
                         /*$rootScope.idTaxi = taxiData.id;*/
 
 
-                        $rootScope.notify('司机已经收到请求! 请稍等');
+                        $rootScope.notify('司机已收到请求! 请稍等');
                         $state.go('app.home');
                     }
                 });

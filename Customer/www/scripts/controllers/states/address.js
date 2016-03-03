@@ -42,7 +42,7 @@ angular.module('itaxiApp')
                     });
 
                 } else {
-                    $rootScope.notify('Please enter a full!', 1000);
+                    $rootScope.notify('请输入完整!', 1000);
                 }
             };
 
