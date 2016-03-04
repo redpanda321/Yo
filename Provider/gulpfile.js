@@ -15,15 +15,15 @@ var runSequence = require('run-sequence');
 
 gulp.task('default', function () {
     // Compile Sass, TypeScript and inject files into index.html
-    runSequence('default:clean', 'default:html', 'default:scss', 'default:ts', 'default:inject');
+   // runSequence('default:clean', 'default:html', 'default:scss', 'default:ts', 'default:inject');
 });
 
 gulp.task('initialize', function () {
     // Download and install bower packages
-    runSequence('initialize:tsd', 'initialize:bower');
+    //runSequence('initialize:tsd', 'initialize:bower');
 });
     
 gulp.task('build', function () {
     // Build project
-    runSequence('build:clean', 'build:html', 'build:files');
+    //runSequence('build:clean', 'build:html', 'build:files');
 });

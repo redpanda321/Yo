@@ -6,7 +6,7 @@ angular.module('taxigoDriverApp')
         // Thoát khỏi ứng dụng
 
         $scope.logout = function () {
-            var confirm = window.confirm("Bạn muốn đang xuất 111?");
+            var confirm = window.confirm("希望出现?");
             if (confirm == true) {
                 auth.logout(function (success) {
                     if (success) {

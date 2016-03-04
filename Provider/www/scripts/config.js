@@ -5,8 +5,7 @@
  */
 
 (function (exports) {
-    var remoteHost = 'http://itaxi.vn:9989'; //'http://localhost:6789';
-
+    var remoteHost = 'http://54.187.5.33:6868';          
     var isMobile = {
         Android: function() {
             return navigator.userAgent.match(/Android/i);

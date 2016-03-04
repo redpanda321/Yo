@@ -194,7 +194,7 @@ angular.module('taxigoDriverApp')
                     google.maps.event.addListener(me.map, 'click', function (evt) { // Listen Evt click on Maps
                         me.directionsService = new google.maps.DirectionsService();
 
-                        if (window.confirm('Bạn muốn chọn địa điểm này ?')) {
+                        if (window.confirm('你要选择这个位置 ?')) {
 
                             var request = {
                                 origin: me.currentPointInputLocation, //me.LatLng, // Start Position
@@ -259,13 +259,13 @@ angular.module('taxigoDriverApp')
 
                                                 gMaps.startPointMarker = L.marker(new L.LatLng(decodePath[i].lat(), decodePath[i].lng()), {
                                                     riseOnHover: true,
-                                                    alt: 'Điểm đi',
+                                                    alt: '点进去',
                                                     icon: L.icon({
                                                         iconUrl: './images/pin_blue.png',
                                                         iconSize: [48, 48],
                                                         popupAnchor: [0, -20]
                                                     })
-                                                }).addTo(me.map).bindPopup('Điểm đi :' + routes.legs[0].start_address);
+                                                }).addTo(me.map).bindPopup('点进去 :' + routes.legs[0].start_address);
 
                                                 gMaps.map.panTo(new L.LatLng(decodePath[i].lat(), decodePath[i].lng()));
                                             }
@@ -273,13 +273,13 @@ angular.module('taxigoDriverApp')
                                             if (i == decodePath.length - 1) { // Create new marker at end point
                                                 gMaps.endPointMarker = L.marker(new L.LatLng(decodePath[i].lat(), decodePath[i].lng()), {
                                                     riseOnHover: true,
-                                                    alt: 'Điểm đi',
+                                                    alt: '点进去',
                                                     icon: L.icon({
                                                         iconUrl: './images/pinIconPink.png',
                                                         iconSize: [48, 48],
                                                         popupAnchor: [0, -20]
                                                     })
-                                                }).addTo(me.map).bindPopup('Điểm đến :' + routes.legs[0].end_address);
+                                                }).addTo(me.map).bindPopup('目的地 :' + routes.legs[0].end_address);
                                             }
                                         }
                                     }
@@ -306,7 +306,7 @@ angular.module('taxigoDriverApp')
                         } else {
                             (cb && angular.isFunction(cb)) ? cb(status, null) : null;
 
-                            alert('Geocode was not successful for the following reason: ' + status);
+                            alert('地理编码没有成功，原因如下: ' + status);
                         }
                     })
                 },
@@ -333,7 +333,7 @@ angular.module('taxigoDriverApp')
                             iconUrl: '../../images/people.png',
                             iconSize: [24, 24]
                         })
-                    }).addTo(me.map).bindPopup("<b>" + 'Khách hàng' + "</b><br />I am a popup.");
+                    }).addTo(me.map).bindPopup("<b>" + '顾客' + "</b><br />I am a popup.");
 
                     me.listMarkerCustomer.push(newMarker);
 
