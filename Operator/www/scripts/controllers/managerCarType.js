@@ -11,13 +11,13 @@ angular.module('itaxiManagerApp')
         $scope.activeForm = 0;
 
         $scope.dataType = {};
-        $scope.selectType = 'Tất cả xe';
+        $scope.selectType = '所有车辆';
         var dataTypeCar;
         $scope.chooseType = function (typeCar) {
-            if ('4 Chỗ' == typeCar) {
+            if ('4 坐' == typeCar) {
                 $scope.loadSearch(4);
             }
-            else if ('7 Chỗ' == typeCar) {
+            else if ('7 坐' == typeCar) {
                 $scope.loadSearch(7);
             } else {
                 $scope.listDriverTypes = dataTypeCar;
@@ -60,26 +60,26 @@ angular.module('itaxiManagerApp')
 
             itemData.save(function (err, resp) {
                 if (!err) {
-                    toastr.success('Thêm mới thành công!');
+                    toastr.success('添加成功!');
                     $scope.listDriverTypes.push(itemData);
                     appDataStore.DriverTypes.add(itemData);
                     $scope.back();
                 } else {
-                    toastr.error('Lỗi thêm mới');
+                    toastr.error('添加失败');
                 }
             })
         };
         $scope.deleteDrivertype = function (item, index) {
             console.log('item delete : ', item, index);
 
-            if (window.confirm('Bạn có muốn xóa tài xế : ' + item.username + ' hay không?')) {
+            if (window.confirm('想删除: ' + item.username + '吗?')) {
                 item.destroy(function (err, result) {
                     if (!err) {
-                        toastr.success('Xóa lái xe thành công!');
+                        toastr.success('删除成功!');
                         $scope.DriverTypes.splice(index, 1);
                         appDataStore.DriverTypes.remove(item);
                     } else {
-                        toastr.error('Lỗi xóa tài khoản');
+                        toastr.error('删除失败');
                     }
                 })
             }

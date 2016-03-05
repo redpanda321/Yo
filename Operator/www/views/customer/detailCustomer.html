@@ -6,7 +6,7 @@
     </ol>
     <div class="pull-right" ng-show="activeForm == 1">
         <button type="button" class="btn btn-default" ng-click="back()"><i class="glyphicon glyphicon-chevron-left"></i>
-            Quay lại
+            回
         </button>
     </div>
 </div>
@@ -22,15 +22,15 @@
         <div class="col-md-3">
             <div class="sort-search">
                 <select class="form-control">
-                    <option>Tìm kiếm theo ngày</option>
-                    <option>Tìm kiếm theo vần</option>
+                    <option>按日期搜索</option>
+                    <option>按字母顺序搜索</option>
                 </select>
             </div>
         </div>
         <div class="col-md-5">
             <div class="add-new-item">
                 <button type="button" class="btn btn-primary pull-right" ng-click="gotoPage('main.managerCustomer')"><i
-                        class="glyphicon glyphicon-plus"></i> Quay lại
+                        class="glyphicon glyphicon-plus"></i>回
                 </button>
             </div>
 
@@ -43,16 +43,16 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <h4>Thông tin lộ trình Khách Hàng : {{username}}</h4>
+            <h4>信息客户的路线图 : {{username}}</h4>
             <div class="table-responsive">
                 <table class="table table-post" id="datatable">
                     <thead>
                     <tr>
                         <th>STT</th>
-                        <th>Địa điểm bắt đầu</th>
-                        <th>Địa điểm kết thúc</th>
-                        <th>Quãng đường</th>
-                        <th>Tài xế</th>
+                        <th>位置开始</th>
+                        <th>位置结束</th>
+                        <th>距离</th>
+                        <th>司机</th>
                     </tr>
                     </thead>
                     <tbody>

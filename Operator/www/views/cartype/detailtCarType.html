@@ -5,7 +5,7 @@
     <table class="table table-detail-cartype">
         <thead>
         <tr>
-            <th style="width : 150px;">Thông tin</th>
+            <th style="width : 150px;">信息</th>
             <th></th>
         </tr>
         </thead>
@@ -33,29 +33,29 @@
     <table class="table">
         <thead>
         <tr>
-            <th style="width : 150px;">Bảng giá</th>
+            <th style="width : 150px;">冰</th>
             <th></th>
         </tr>
         </thead>
         <tbody>
         <tr>
-            <td><b>Km đầu tiên : từ 0 Km đến </b></td>
+            <td><b>The first kilometers: from 0Km to </b></td>
             <td><input ng-model="data.firstKm" type="text" class="form-control"
                        value="{{data.firstKm}}"/></td>
         </tr>
         <tr>
-            <td><b>Giá Km đầu tiên :</b></td>
+            <td><b>Prices first Km :</b></td>
             <td><input ng-model="data.firstPrice" type="text" class="form-control"
                        value="{{data.firstPrice}}"/></td>
         </tr>
 
         <tr>
-            <td><b>Km Thứ 2 từ {{data.firstKm}}Km đến : </b></td>
+            <td><b>Km Monday from {{data.firstKm}}km to : </b></td>
             <td><input ng-model="data.middleKm" type="text" class="form-control"
                        value="{{data.middleKm}}"/></td>
         </tr>
         <tr>
-            <td><b>Giá Km thứ 2: </b></td>
+            <td><b>2nd Km Price: </b></td>
             <td><input ng-model="data.middlePrice" type="text" class="form-control"
                        value="{{data.middlePrice}}"/></td>
         </tr>
@@ -64,7 +64,7 @@
             <td> {{data.middleKm}}</td>
         </tr>
         <tr>
-            <td><b>Giá Km Cuối</b></td>
+            <td><b>Price Km End</b></td>
             <td><input ng-model="data.lastPrice" type="text" class="form-control"
                        value="{{data.lastPrice}}"/></td>
         </tr>
@@ -76,10 +76,10 @@
 <div class="col-xs-12" class="text-center">
     <div class="pull-left">
         <button ng-click="update(data)" type="button" class="btn btn-success"><i
-                class="glyphicon glyphicon-edit"></i> Cập nhật
+                class="glyphicon glyphicon-edit"></i>升级
         </button>
         <button type="button" class="btn btn-primary" ng-click="gotoPage('main.managerCarType')"><i
-                class="glyphicon glyphicon-lock"></i> Quay lại
+                class="glyphicon glyphicon-lock"></i> 返回
         </button>
     </div>
 </div>

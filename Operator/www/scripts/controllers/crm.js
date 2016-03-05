@@ -20,11 +20,24 @@ angular.module('itaxiManagerApp')
 
         $scope.messageGroup = [
             {
-                name: 'Hoàng Văn Lợi',
-                title: 'Tiêu đề của bức thư',
-                detail: 'Nội dung trong bức thư dài nhất mà tôi từng thấy',
+                name: '黄文莱',
+                title: '信的标题',
+                detail: '我见过的最长的信的内容',
                 time: '21:30'
             },
+            {
+                name: '黄文莱',
+                title: '信的标题',
+                detail: '我见过的最长的信的内容',
+                time: '21:30'
+            },
+            {
+                name: '黄文莱',
+                title: '信的标题',
+                detail: '我见过的最长的信的内容',
+                time: '21:30'
+              
+            },/*
             {
                 name: 'Hoàng Văn Lợi',
                 title: 'Tiêu đề của bức thư',
@@ -102,19 +115,7 @@ angular.module('itaxiManagerApp')
                 title: 'Tiêu đề của bức thư',
                 detail: 'Nội dung trong bức thư dài nhất mà tôi từng thấy',
                 time: '21:30'
-            },
-            {
-                name: 'Hoàng Văn Lợi',
-                title: 'Tiêu đề của bức thư',
-                detail: 'Nội dung trong bức thư dài nhất mà tôi từng thấy',
-                time: '21:30'
-            },
-            {
-                name: 'Hoàng Văn Lợi',
-                title: 'Tiêu đề của bức thư',
-                detail: 'Nội dung trong bức thư dài nhất mà tôi từng thấy',
-                time: '21:30'
-            }
+            }*/
         ];
         var ModalInstanceCtrl = function ($scope, $modalInstance, items) {
 

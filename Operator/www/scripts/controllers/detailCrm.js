@@ -13,10 +13,10 @@ angular.module('itaxiManagerApp')
             };
 
             $scope.options = {
-                buttonDefaultText: 'Gửi tin nhắn',
-                buttonSubmittingText: 'Đang Gửi',
-                buttonSuccessText: 'Gửi thành công',
-                buttonErrorText: 'Nhập Email',
+                buttonDefaultText: '发送消息',
+                buttonSubmittingText: '显示提交',
+                buttonSuccessText: '发送成功',
+                buttonErrorText: '输入Email',
                 buttonDefaultClass: 'btn-default',
                 buttonSubmittingClass: 'btn-info',
                 buttonSuccessClass: 'btn-success'
@@ -28,7 +28,7 @@ angular.module('itaxiManagerApp')
             // Function handle when send email.
             $scope.sendMessage = function(dataSend) {
                 if (dataSend.receiver != null && dataSend.receiver != '') {
-                    $http.post('http://nodejs.vn:6969/sendMail', dataSend)
+                    $http.post('http://54.187.5.33:6969/sendMail', dataSend)
                         .success(function (data) {
                             // console.log('this is data received:  ',data);
                             dataSend.receiver = '';

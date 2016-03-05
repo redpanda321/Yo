@@ -1,10 +1,10 @@
 <div class="title-content-post">
     <ol class="breadcrumb pull-left">
         <li><a href="#">{{getApp.name}}</a></li>
-        <li><a href="#">Quản lý loại xe</a></li>
-        <li ng-show="activeForm == 1"><a href="#" >Danh sách loại xe</a></li>
-        <li class="active" ng-show="activeForm == 0">Danh sách loại xe</li>
-        <li class="active" ng-show="activeForm == 1">Thông tin {{data.carMarker}}</li>
+        <li><a href="#">车辆管理</a></li>
+        <li ng-show="activeForm == 1"><a href="#" >车辆名单</a></li>
+        <li class="active" ng-show="activeForm == 0">车辆名单</li>
+        <li class="active" ng-show="activeForm == 1">信息 {{data.carMarker}}</li>
     </ol>
 </div>
 <div class="content-post" ng-show="activeForm == 0">
@@ -12,23 +12,23 @@
         <div class="col-md-3">
             <div class="input-group input-search">
                 <i class="fa fa-search"></i>
-                <input type="text" class="form-control" placeholder="Tìm kiếm" ng-model="search">
+                <input type="text" class="form-control" placeholder="搜索" ng-model="search">
             </div>
 
         </div>
         <div class="col-md-3">
             <div class="sort-search">
                 <select ng-model="selectType" ng-change="chooseType(selectType)" class="form-control">
-                    <option selected>Tất cả xe</option>
-                    <option>4 Chỗ</option>
-                    <option>7 Chỗ</option>
+                    <option selected>所有车辆</option>
+                    <option>4 坐</option>
+                    <option>7 坐</option>
                 </select>
             </div>
         </div>
         <div class="col-md-5">
             <div class="add-new-item">
                 <button type="button" class="btn btn-primary pull-right" ng-click="activeForm = 1"><i
-                        class="glyphicon glyphicon-plus"></i> Thêm mới
+                        class="glyphicon glyphicon-plus"></i> 新创建
                 </button>
                 <button class="btn btn-primary pull-right"><a style="color: white;" download="data.xls" onclick="return ExcellentExport.excel(this, 'datatable', 'Sheet Name Here');">Export to Excel</a></button>
             </div>
@@ -46,15 +46,15 @@
                     <thead>
                     <tr>
                         <th>STT</th>
-                        <th>Loại xe</th>
-                        <th>Mầu</th>
-                        <th>Số chỗ</th>
-                        <th>Km đầu tiên</th>
-                        <th>Giá Km đầu tiên</th>
-                        <th>Km thứ hai</th>
-                        <th>Giá KM thứ 2</th>
-                        <th>KM Cuối</th>
-                        <th>Giá KM cuối</th>
+                        <th>汽车</th>
+                        <th>颜色</th>
+                        <th>席</th>
+                        <th>首公里</th>
+                        <th>一公里价格</th>
+                        <th>周一 公里</th>
+                        <th>第二公里 价格</th>
+                        <th>公里 结束</th>
+                        <th>最后 价格</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -64,12 +64,12 @@
                         <td>{{data.carMarker}}</td>
                         <td>{{data.color}}</td>
                         <td>{{data.seatNum}}</td>
-                        <td> < {{data.firstKm}} Km</td>
-                        <td>{{data.firstPrice}} VNĐ</td>
-                        <td>{{data.firstKm}} Km đến < {{data.middleKm}} Km</td>
-                        <td>{{data.middlePrice}} VNĐ</td>
-                        <td>Lớn hơn {{data.middleKm}} Km</td>
-                        <td>{{data.lastPrice}} VNĐ</td>
+                        <td> < {{data.firstKm}} 公里</td>
+                        <td>{{data.firstPrice}} 元</td>
+                        <td>{{data.firstKm}} 公里 至 < {{data.middleKm}} Km</td>
+                        <td>{{data.middlePrice}} 元</td>
+                        <td>Lớn hơn {{data.middleKm}} 公里</td>
+                        <td>{{data.lastPrice}} 元</td>
                     </tr>
                     </tbody>
                 </table>

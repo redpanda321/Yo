@@ -215,7 +215,7 @@ angular
                             if (err) {
                                 console.log('Lỗi: ', err)
                             } else {
-                                toastr.success('Thay đổi ảnh thành công');
+                                toastr.success('更换图片成功');
                                 appDataStore.Drivings.update(driving);
                             }
                         })

@@ -18,7 +18,7 @@ angular.module('itaxiManagerApp')
                 for (var i = 0; i < files.length; i++) {
                     var file = files[i];
                     $scope.upload = $upload.upload({
-                        url: 'http://vsoft.vn:1235/upload', // upload.php script, node.js route, or servlet url
+                        url: 'http://54.187.5.33:1235/upload', // upload.php script, node.js route, or servlet url
                         method: 'POST', // or 'PUT',
 
 
@@ -152,12 +152,12 @@ angular.module('itaxiManagerApp')
 
             itemSave.save(function (err, result) {
                 if (!err) {
-                    toastr.info('Cập nhật thông tin lái xe thành công!');
+                    toastr.info('司机更新成功!');
                     appDataStore.Drivings.update(result[0]);
                     $scope.enabale = true;
                     $scope.driver = result[0];
                 } else {
-                    toastr.error('Lỗi cập nhật thông tin lái xe');
+                    toastr.error('司机更新错误');
                 }
             })
         };
