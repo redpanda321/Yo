@@ -43,7 +43,7 @@ angular.module('itaxiApp', [
 
                          function onGPSSuccess(on) {
                          if (on) console.log("GPS is enabled");
-                         else alert("Thiết bị của bạn chưa bật GPS .");
+                         else alert("您的设备未启用GPS .");
                          }
 
                          function onGPSError(e) {
