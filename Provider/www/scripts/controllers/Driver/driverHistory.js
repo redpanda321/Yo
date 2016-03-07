@@ -9,7 +9,7 @@ angular.module('taxigoDriverApp')
             loadHistory = function () {
                 var userId = auth.getUserId();
 
-                // Tìm kiếm
+                // Search
                 var filter = [
                     {
                         property: 'driver',

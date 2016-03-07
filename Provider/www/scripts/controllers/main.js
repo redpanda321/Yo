@@ -112,13 +112,13 @@ angular.module('taxigoDriverApp')
                 if (navigator.notification) {
                     navigator.notification.beep(1);
                     navigator.notification.alert(
-                        'Nội dung : ' + data.content ,  // message
+                        '内容 : ' + data.content ,  // message
                         function (){},         // callback
-                        'Tin nhắn từ khách hàng ',            // title
-                        'Đồng ý'                  // buttonName
+                        '客户留言 ',            // title
+                        '同意'                  // buttonName
                     );
                 }else {
-                    alert('Tin nhắn từ khách hàng : ' + data.content);
+                    alert('客户留言: ' + data.content);
                 }
 
                 logger.info('socketIoService', 'receipt:message', data);
@@ -136,10 +136,10 @@ angular.module('taxigoDriverApp')
                 $rootScope.readMess = false;
                 if (driver.getDirectionInfo() == false) {
                     /* showAlert('Bạn chưa có khách hàng nào!', 'TaxiGo');*/
-                    toastr.success('Bạn chưa có khách hàng nào!');
+                    toastr.success('没有任何客户!');
 
                 } else if ($rootScope.customerInfo.status == 2) {
-                    showAlert('Khách Hàng đã kết thúc lộ trình!', 'TaxiGo');
+                    showAlert('客户路线!', '约约');
                 } else {
                     $rootScope.switchListTaxi(3);
                     //TODO : you can action is here
@@ -151,7 +151,7 @@ angular.module('taxigoDriverApp')
                 if (status) {
                     driver.updateRoute(driver.getDirectionInfo()[0].id, 3, function (err, result) {
                         if (err) {
-                            showAlert('Thông báo : có lỗi xảy ra !. Không thể hủy lộ trình', 'TaxiGo');
+                            showAlert('信息：坏消息，无法取消线路', '约约');
                         } else {
 
                             //console.log('Destroy route ', result);
@@ -185,7 +185,7 @@ angular.module('taxigoDriverApp')
                             gmaps.map.panTo(gmaps.currentPoint.getLatLng());
 
 
-                            toastr.success('Kết thúc lộ trình thành công.');
+                            toastr.success('路线成功结束.');
 
                             $rootScope.acceptCustomer = false;
                             $rootScope.acceptCustomerStart = false;
@@ -198,10 +198,10 @@ angular.module('taxigoDriverApp')
                 } else {
                     if (driver.getDirectionInfo()[0].status == 0) { // going to position of customer
 
-                        if (window.confirm('Bạn có chắc chắn muốn hủy lộ trình này không?')) {
+                        if (window.confirm('您确定要取消这个线路?')) {
                             driver.updateRoute(driver.getDirectionInfo()[0].id, 4, function (err, result) {
                                 if (err) {
-                                    showAlert('Thông báo : có lỗi xảy ra !. Không thể hủy lộ trình', 'TaxiGo');
+                                    showAlert('信息：不好的消息，无法取消线路', '约约');
                                 } else {
 
                                     socketIo.emit('destroy:route', {
@@ -234,7 +234,7 @@ angular.module('taxigoDriverApp')
                                     gmaps.map.panTo(gmaps.currentPoint.getLatLng());
 
                                     /*  $rootScope.tooltip.open('Thông báo : kết thúc trình thành công', 4000);*/
-                                    toastr.success('Kết thúc lộ trình thành công.');
+                                    toastr.success('路线成功结束.');
 
                                     $rootScope.acceptCustomer = false;
                                     $rootScope.acceptCustomerStart = false;
@@ -244,12 +244,12 @@ angular.module('taxigoDriverApp')
                             });
                         }
                     } else {
-                        if (window.confirm('Bạn muốn kết thúc lộ trình ?')) {
+                        if (window.confirm('要结束线路 ?')) {
                             driver.updateRoute(driver.getDirectionInfo()[0].id, 2, function (err, result) {
                                 if (err) {
                                     /* showAlert('Thông báo : có lỗi xảy ra !. Không thể kết thúc lộ trình', 'TaxiGo');*/
 
-                                    toastr.success('Có lỗi xẩy ra không thể thể kết thúc lộ trình này');
+                                    toastr.success('发生错误，不能结束这条线路');
                                 } else {
 
                                     socketIo.emit('destroy:route', {
@@ -279,7 +279,7 @@ angular.module('taxigoDriverApp')
                                     gmaps.map.panTo(gmaps.currentPoint.getLatLng());
 
                                     /*$rootScope.tooltip.open('Thông báo : kết thúc trình thành công', 4000);*/
-                                    toastr.success('Kết thúc lộ trình thành công');
+                                    toastr.success('路线成功结束');
 
                                     $rootScope.acceptCustomer = false;
                                     $rootScope.acceptCustomerStart = false;
@@ -300,7 +300,7 @@ angular.module('taxigoDriverApp')
                         if (err) {
                             /*showAlert('Thông báo : có lỗi xảy ra !. Không thể bắt đầu lộ trình', 'TaxiGo');*/
 
-                            toastr.success('Có lỗi xẩy ra,không thể kết thúc lộ trình này');
+                            toastr.success('发生错误，无法结束这条线路');
 
                         } else {
                             driver.setDirectionInfo([result]);
@@ -309,10 +309,10 @@ angular.module('taxigoDriverApp')
                                 roomID: driver.getCurrentRoomID()
                             });
 
-                            var startRouter = 'Lộ trình đã được bắt đầu !';
+                            var startRouter = '该线路已经启动 !';
                             /*  $rootScope.tooltip.open(startRouter, 5000);*/
 
-                            toastr.success('Lộ trình được bắt đầu');
+                            toastr.success('路线开始');
                             $rootScope.acceptCustomerStart = false;
                         }
 
@@ -332,7 +332,7 @@ angular.module('taxigoDriverApp')
                     console.log('customer:calling', data);
                     start = data.startPoint;
                     end = data.endPoint;
-                    mess = 'Có yêu cầu từ khách hàng !';
+                    mess = '客户请求!';
 
                     var d = new Date();
 
@@ -348,7 +348,7 @@ angular.module('taxigoDriverApp')
                             taxiId: auth.getUserId()
                         };
                         socketIo.emit('taxi:denied', emitDataRemove);
-                        showAlert('Bạn đã nhỡ 1 Khách Hàng', 'TaxiGo');
+                        showAlert('您错过了一个客户', '约约');
                     }
                     else if (bConfirm) {
 
@@ -360,7 +360,7 @@ angular.module('taxigoDriverApp')
 
                         driver.setCurrentRoomID(data.roomID);
                         socketIo.emit('taxi:accept', data);
-                        toastr.success('Khách hàng đã nhận được thông tin lái xe');
+                        toastr.success('客户已经预约司机');
                     }
                     else {
                         var emitDataRemove = {
@@ -371,7 +371,7 @@ angular.module('taxigoDriverApp')
                         };
 
                         socketIo.emit('taxi:denied', emitDataRemove);
-                        console.log("Bạn đã hủy khách này");
+                        console.log("您取消了预定");
                     }
                 }
             });
@@ -389,7 +389,7 @@ angular.module('taxigoDriverApp')
                 });
                 driver.setCurrentRoomID(data.roomID);
                 if (!data.isQuick) {
-                    messCustomer = 'Khách hàng đã chọn bạn! điểm bắt đầu : ' + start + ' điểm kết thúc: ' + end + ' Nhấn OK để xem lộ trình';
+                    messCustomer = '客户选择了您!起点 : ' + start + ' 终点: ' + end + ' 按 OK 看时间表';
 
                     if (confirm(messCustomer)) {
 
@@ -427,7 +427,7 @@ angular.module('taxigoDriverApp')
 
                 } else {
                     /*$rootScope.tooltip.open('Lộ trình đã bắt đầu');*/
-                    toastr.success('Lộ trình được bắt đầu');
+                    toastr.success('路线开始');
                     $rootScope.$apply(function () {
                         $rootScope.acceptCustomer = true;
                         $rootScope.acceptCustomerStart = true;
@@ -481,7 +481,7 @@ angular.module('taxigoDriverApp')
 
             socketIo.on('quick:customer:calling', function (data) {
 
-                var msg = 'Có khách hàng yêu cầu đón tại\n' + data.startPoint;
+                var msg = '有客户需要\n' + data.startPoint;
 
 
                 if (navigator.notification) {
@@ -502,7 +502,7 @@ angular.module('taxigoDriverApp')
                         carLic: auth.getUserName()
                     };
                     socketIo.emit('quick:taxi:reject', rejectData);
-                    showAlert('Bạn đã nhỡ 1 khách hàng', 'TaxiGo');
+                    showAlert('您错过了一个客户', '约约');
                 }
                 else if (bConfirm) {
                     /*angular.forEach(gmaps.listMarkerCustomer, function (v, k) {
@@ -524,7 +524,7 @@ angular.module('taxigoDriverApp')
                     };
 
                     socketIo.emit('quick:taxi:reject', emitDataRemove);
-                    console.log("Bạn đã hủy khách này");
+                    console.log("您取消了预定");
                 }
 
                 console.log('quick:customer:calling', data);

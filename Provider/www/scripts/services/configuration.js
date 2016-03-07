@@ -7,7 +7,7 @@ angular.module('taxigoDriverApp')
             deviceId: (window.device) ? device.uuid : '9f9f9f99999',
             name: 'Taxi Go',
             apiHost: 'http://54.187.5.33:6868', //http://192.168.5.105:9696
-            mediaHost: 'http://nodejs.vn:6969',
+            mediaHost: 'http://54.187.5.33:6969',
             isLogin: false
         };
         return config;

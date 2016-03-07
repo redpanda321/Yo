@@ -27,7 +27,7 @@ angular.module('taxigoDriverApp')
                 if (err) {
                     $scope.checkLogin = true;
                     $scope.loginProcess = false;
-                    window.toastr.success('Sai tên đăng nhập hoặc mật khẩu');
+                    window.toastr.success('用户名或密码不正确');
                 }
                 else {
                     $scope.loginProcess = false;
@@ -37,7 +37,7 @@ angular.module('taxigoDriverApp')
                         auth.connectSocketIo();
                     }
 
-                    window.toastr.success('Đăng nhập thành công');
+                    window.toastr.success('登陆成功');
 
                     $state.go('taxiGoDriver.home');
                 }
