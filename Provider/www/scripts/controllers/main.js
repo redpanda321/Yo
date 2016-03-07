@@ -455,7 +455,7 @@ angular.module('taxigoDriverApp')
                  + ' . Bạn có đồng ý không ?')) {
 
                  }*/
-                var messDelete = "Khách hàng đã yêu cầu hủy lộ trình với lý do : " + destroyData.reason;
+                var messDelete = "取消线路原因 : " + destroyData.reason;
                 showAlert(messDelete);
                 // CM:  Tham số để xác định hủy lộ trình
                 $scope.deleteRouter(1);

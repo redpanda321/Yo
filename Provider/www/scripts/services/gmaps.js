@@ -333,7 +333,7 @@ angular.module('taxigoDriverApp')
                             iconUrl: '../../images/people.png',
                             iconSize: [24, 24]
                         })
-                    }).addTo(me.map).bindPopup("<b>" + '顾客' + "</b><br />I am a popup.");
+                    }).addTo(me.map).bindPopup("<b>" + '顾客' + "</b><br />我是一个弹窗.");
 
                     me.listMarkerCustomer.push(newMarker);
 
