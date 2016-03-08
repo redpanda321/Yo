@@ -26,8 +26,8 @@ angular.module('itaxiApp')
 
 
             $scope.settingsList = [
-                { text: "页脚激活", checked: false },
-                { text: "定制页脚激活", checked: false }
+                { text: "hide-footer active", checked: false },
+                { text: "custom class my-footer active", checked: false }
             ];
 
 
@@ -692,7 +692,7 @@ angular.module('itaxiApp')
                 $ionicSlideBoxDelegate.$getByHandle('route').slide(2, 300);
             };
 
-            $ionicModal.fromTemplateUrl('./views/states/child/0:d/M/yyyy HH:mm:ss:ffffff', {
+            $ionicModal.fromTemplateUrl('./views/states/child/router.html', {
                 scope: $scope,
                 animation: 'slide-in-up',
                 focusFirstInput: true
