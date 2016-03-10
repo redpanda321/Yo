@@ -106,7 +106,7 @@ angular.module('itaxiApp')
                         var mapEl = document.getElementById('map');
                         var mapHeight = mapEl.offsetHeight;
                         var mapWidth = mapEl.offsetWidth;
-                        mapEl.innerHTML = "<img src='http://maps.google.com/maps/api/staticmap?center=" + latLng + "&markers=" + latLng + "&zoom=6&size=" + 1000 + "x" + 1000 + "&sensor=false'>";
+                        mapEl.innerHTML = "<img src='http://maps.google.com/maps/api/staticmap?center=" + latLng + "&markers=" + latLng + "&zoom=6&size=" + 1000 + "x" + 1000 + "'>";
                     };
                     var ll = [position.coords.latitude, position.coords.longitude].join(',');
 

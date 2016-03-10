@@ -15,6 +15,7 @@
           content="width=device-width, height=device-height, user-scalable=no,initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+    <meta http-equiv="Content-Security-Policy"/>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
     <!--<link rel="stylesheet" href="bower_components/ionic/release/css/ionic.min.css"/>-->
@@ -124,7 +125,7 @@
 <script src="scripts/utils/ionic-angular.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
-
+<script src="scripts/utils/leaflet.js"></script>
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 
@@ -193,9 +194,9 @@
 <!-- endbuild -->
 
 
-<script src="scripts/utils/leaflet.js"></script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ3PPRO4HcOS8nA-GCEX-TXUhU_PAl6F4&sensor=false&region=VN&libraries=places"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ3PPRO4HcOS8nA-GCEX-TXUhU_PAl6F4&region=CN&libraries=places"></script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 <!--<feature name="NetworkStatus">

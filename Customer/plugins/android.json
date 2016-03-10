@@ -12,6 +12,12 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.cordova.myapp37fa9479f98a49f4a53ab78472334b16"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "io.cordova.myapp37fa9479f98a49f4a53ab78472334b16"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "io.cordova.myapp37fa9479f98a49f4a53ab78472334b16"
         }
     },
     "dependent_plugins": {}
