@@ -6,7 +6,7 @@
   <name>YoYo</name>
   <description>Multiplatform template</description>
   <author email="dev@cordova.apache.org" href="http://cordova.io">CKGrafico</author>
-  <content src="index.html"/>
+  <content src="http://192.168.0.13:8100" original-src="index.html"/>
   <access origin="*"/>
   <vs:features></vs:features>
   <preference name="SplashScreen" value="screen"/>
