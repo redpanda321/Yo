@@ -8,7 +8,7 @@
   <author email="dev@cordova.apache.org" href="http://cordova.io">CKGrafico</author>
   <content src="index.html"/>
   <access origin="*"/>
-  <vs:features/>
+  <vs:features></vs:features>
   <preference name="SplashScreen" value="screen"/>
   <preference name="windows-target-version" value="8.1"/>
   <preference name="windows-phone-target-version" value="8.1"/>

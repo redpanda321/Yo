@@ -36,12 +36,12 @@ angular.module('itaxiApp')
             $scope.showActionsheet = function () {
 
                 $ionicActionSheet.show({
-                    titleText: 'Rather avatar',
+                    titleText: '更换头像',
                     buttons: [
                         { text: '拍一张新照片' },
                         { text: '从相册中选取' }
                     ],
-                    cancelText: 'Cancel',
+                    cancelText: '取消',
                     cancel: function () {
                         console.log('CANCELLED');
                     },
@@ -89,8 +89,9 @@ angular.module('itaxiApp')
 
                 $scope.upload = $upload
                     .upload({
-                        url: appConfig.mediaHost + '/uploadFile', //upload.php script, node.js route, or servlet url
-                        method: 'POST',// or PUT,
+                        //url: appConfig.mediaHost + '/uploadFile', //upload.php script, node.js route, or servlet url
+                    url:appConfig.mediaHost + '/file-upload', //upload.php script, node.js route, or servlet url
+                    method: 'POST',// or PUT,
                         // headers: {'headerKey': 'headerValue'}, withCredential: true,
                         data: {tableName: 'menuData'},
                         file: $file

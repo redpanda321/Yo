@@ -9,7 +9,7 @@ angular.module('itaxiApp')
             name: 'YoYo',
             //apiHost: 'http://taxigo.vn:9989',
             apiHost: 'http://54.187.5.33:6868',
-            mediaHost: 'http://nodejs.vn:9697',
+            mediaHost: 'http://54.187.5.33:6868',
             isLogin: false
         };
 
