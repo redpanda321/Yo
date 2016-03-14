@@ -326,30 +326,30 @@
 
             conf.stylesXmlFile = "styles.xml";
             conf.cols = [{
-                caption: 'Thời gian bắt đầu',
+                caption: 'Start Time',
                 type: 'string',
                 width: 20
             }, {
-                caption: 'Thời gian kết thúc',
+                caption: 'End Time',
                 type: 'string',
                 width: 20
             },{
-                caption:'Ho Ten Khach hang',
+                caption:'Custmoer Name',
                 type:'string',
                 // beforeCellWrite:function(row, cellData){
                 //     return cellData.toUpperCase();
                 // },
                 width: 30
             },{
-                caption: 'Điểm bắt đầu',
+                caption: 'Starting Point',
                 type: 'string',
                 width: 30
             },{
-                caption: 'Điểm kiết thúc',
+                caption: 'Ends',
                 type: 'string',
                 width: 30
             }, {
-                caption: 'Độ Dài',
+                caption: 'Length',
                 type:'number'
             }//,{
                 //     caption:'date',
