@@ -10,7 +10,7 @@ if (!window['google']['loader']) {
     google.loader.LoadFailure = false;
     google.loader.Secure = true;
     google.loader.GoogleLocale = 'www.google.com';
-    google.loader.ClientLocation = {"latitude":21.017,"longitude":105.867,"address":{"city":"","region":"Ha Noi","country":"Vietnam","country_code":"VN"}};
+    google.loader.ClientLocation = {"latitude":21.017,"longitude":105.867,"address":{"city":"","region":"Calgary","country":"Canada","country_code":"CA"}};
     google.loader.AdditionalParams = '';
     (function() {var d=encodeURIComponent,g=window,h=document;function l(a,b){return a.load=b}var m="push",n="replace",q="charAt",r="indexOf",t="ServiceBase",u="name",v="getTime",w="length",x="prototype",y="setTimeout",z="loader",A="substring",B="join",C="toLowerCase";function D(a){return a in E?E[a]:E[a]=-1!=navigator.userAgent[C]()[r](a)}var E={};function F(a,b){var c=function(){};c.prototype=b[x];a.U=b[x];a.prototype=new c}
         function G(a,b,c){var e=Array[x].slice.call(arguments,2)||[];return function(){return a.apply(b,e.concat(Array[x].slice.call(arguments)))}}function H(a){a=Error(a);a.toString=function(){return this.message};return a}function I(a,b){for(var c=a.split(/\./),e=g,f=0;f<c[w]-1;f++)e[c[f]]||(e[c[f]]={}),e=e[c[f]];e[c[c[w]-1]]=b}function J(a,b,c){a[b]=c}if(!K)var K=I;if(!L)var L=J;google[z].v={};K("google.loader.callbacks",google[z].v);var M={},N={};google[z].eval={};K("google.loader.eval",google[z].eval);

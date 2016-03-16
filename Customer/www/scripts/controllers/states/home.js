@@ -494,7 +494,7 @@ angular.module('itaxiApp')
                 }
                 if (searchValue.length > 0) {
                     // Search address
-                    gmaps.placeService.getPlacePredictions({ input: searchValue, types: ['geocode'], componentRestrictions: { 'country': 'VN' }}, function (predictions, status) {
+                    gmaps.placeService.getPlacePredictions({ input: searchValue, types: ['geocode'], componentRestrictions: { 'country': 'CA' }}, function (predictions, status) {
 
                         if (status == google.maps.places.PlacesServiceStatus.OK) {
 

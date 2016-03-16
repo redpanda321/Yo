@@ -388,7 +388,7 @@ angular.module('itaxiApp')
 
                                             $rootScope.distanceCheck = routes.legs[0].distance.value;
                                             if (!$rootScope.status.hasRouter) {
-                                                $rootScope.pageTitleCalu = '估计: ' + routes.legs[0].distance.text + ' - ' + $filter('toCurrency')(Math.round(routes.legs[0].distance.value / 1000) * 12000) + ' VNĐ';
+                                                $rootScope.pageTitleCalu = '估计: ' + routes.legs[0].distance.text + ' - ' + $filter('toCurrency')(Math.round(routes.legs[0].distance.value / 1000) * 12000) + ' 元';
                                             }
 
                                             $rootScope.stepDirection = routes.legs[0].steps;
