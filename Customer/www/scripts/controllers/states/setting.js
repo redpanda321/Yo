@@ -83,9 +83,9 @@ angular.module('itaxiApp')
                     $logger.info('onFileSelect', '$file', $file);
                 }
 
-                //logger.debug('onFileSelect', '$file', $file);
+                logger.debug('onFileSelect', '$file', $file);
 
-                //logger.info('onFileSelect', '$upload', $upload);
+                logger.info('onFileSelect', '$upload', $upload);
 
                 $scope.upload = $upload
                     .upload({
