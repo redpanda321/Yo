@@ -11,7 +11,13 @@ angular.module('taxigoDriverApp')
         $scope.customer = {};
         $scope.customer.username = auth.getLastLoginName() || '';
 
-        /*function Login : req to server  */
+        /*function Login : req to server
+         * 
+         * 
+         * 30h-9999/123123
+         * 
+         * 
+           */
         if (window.socketIo) {
             window.socketIo.disconnect();
         }
