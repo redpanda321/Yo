@@ -18,7 +18,7 @@ angular.module('itaxiManagerApp')
                 for (var i = 0; i < files.length; i++) {
                     var file = files[i];
                     $scope.upload = $upload.upload({
-                        url: 'http://54.187.5.33:1235/upload', // upload.php script, node.js route, or servlet url
+                        url: 'http://54.187.5.33:6868/file-upload', // upload.php script, node.js route, or servlet url
                         method: 'POST', // or 'PUT',
 
 

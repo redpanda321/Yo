@@ -8,7 +8,7 @@ angular.module('taxigoDriverApp')
     .controller('MainCtrl', ['$rootScope', '$scope', 'gmaps', '$timeout', 'auth', '$state', 'config', 'driver', '$location', 'fetchData', 'socketIoService', '$interval', 'logger', 'restful',
         function ($rootScope, $scope, gmaps, $timeout, auth, $state, config, driver, $location, fetchData, socketIoService, $interval, logger, restful) {
 
-            /*Kiểm tra login có token thì main.js load luôn không qua login và load gmap*/
+            /*Check domain has not always load main.js token, the login and load through gmap*/
 
             var maxTimeWait = 9000;
             var loadHistory;
@@ -66,7 +66,7 @@ angular.module('taxigoDriverApp')
                 })
             };
 
-            $scope.listMessage = []; // cm : Danh sách tin nhắn
+            $scope.listMessage = []; //cm: List messages
 
             $scope.goToCenter = function () {
                 gmaps.direcCenter();
@@ -377,7 +377,7 @@ angular.module('taxigoDriverApp')
             });
 
 
-            /*Lắng nghe socket khách hàng chọn taxi*/
+            /*Listening to client socket taxi pick*/
 
 
             socketIo.on('customer:choose:me', function (data) {

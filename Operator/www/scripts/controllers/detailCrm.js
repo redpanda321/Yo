@@ -28,7 +28,7 @@ angular.module('itaxiManagerApp')
             // Function handle when send email.
             $scope.sendMessage = function(dataSend) {
                 if (dataSend.receiver != null && dataSend.receiver != '') {
-                    $http.post('http://54.187.5.33:6969/sendMail', dataSend)
+                    $http.post('http://54.187.5.33:6868/sendMail', dataSend)
                         .success(function (data) {
                             // console.log('this is data received:  ',data);
                             dataSend.receiver = '';

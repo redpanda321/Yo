@@ -14,24 +14,24 @@ angular.module('taxigoDriverApp', [
 ])
     .config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function ($stateProvider, $urlRouterProvider, $httpProvider) {
 
-        /*Mọi truy cập không hợp lệ được điều hướng về index : */
+        /*All access invalid navigation on index : */
 
         $urlRouterProvider.otherwise("/");
 
-        /*Định ngĩa state trong TaxiGoDriver : */
+        /*Static definition in Taxi Driver: */
 
         $stateProvider
             .state('taxiGoDriver', {
 
-                /*Chỉ có token mới có thể truy cập (có quyên User)*/
+                /*New token can only access (with suicidal User)*/
 
                 accessLevel: window.userCan.accessUser,
 
-                /*Khai báo có view con thuộc view này */
+                /*Declare with the view of this view */
 
                 abstract: true,
 
-                /* Khi view con có trạng thái url : "/" ngĩa là nó là đại diện cho view này khi hiển thị */
+                /*When you can view the status url: "/" means that it is representative of this view when displayed */
                 url: "",
                 templateUrl: 'views/main.html',
                 controller: 'MainCtrl',
@@ -59,12 +59,12 @@ angular.module('taxigoDriverApp', [
             })
             .state('taxiGoDriver.home', {
 
-                /*url : "/"  mặc định trang này sẽ được gọi ra khi state gọi (taxiGoDriver) */
+                /*url : "/"  default pages will be invoked when the state called(taxiGoDriver) */
 
                 url: "/",
                 templateUrl: 'views/Driver/home.html',
 
-                /*Định ngĩa multi view ở đây : */
+                /*Definition multi view here : */
 
                 views: {
                     "toolBar": {
@@ -73,7 +73,7 @@ angular.module('taxigoDriverApp', [
                     }
                 },
 
-                /*Quyền truy cập user */
+                /*User access */
 
                 accessLevel: window.userCan.accessUser,
                 controller: 'MainCtrl'
@@ -93,7 +93,7 @@ angular.module('taxigoDriverApp', [
                 controller: 'HistoryCtrl'
             });
 
-        /*intercepter : định ngĩa những truy cập không được phép(đây là 1 thành phần của AngularJs) :*/
+        /*intercepter : define the access is not allowed (this is one component of AngularJs) :*/
 
 
         var interceptor = ['$rootScope', '$q', '$location', 'logger', function ($rootScope, $q, $location, logger) {
@@ -133,7 +133,7 @@ angular.module('taxigoDriverApp', [
 
         /*Facetory : config*/
 
-        // cm: nút hủy và nút bắt đầu mặc định là  không hiển thị
+        // cm:cancel button and the Start button is not displayed by default
 
         $rootScope.acceptCustomer = false;
         $rootScope.acceptCustomerStart = false;
@@ -212,7 +212,7 @@ angular.module('taxigoDriverApp', [
                     angular.element(document.querySelector('#taxiIntro')).addClass("on");
                     $rootScope.ListTaxiModalClass = 'transition center';
                 }
-                //CM : 4 đóng animation
+                //CM : 4 closing animation
                 if (status == 4) {
                     angular.element(document.querySelector('#taxiIntro')).removeClass("on");
                     $rootScope.ListTaxiModalClass = 'transition right';
@@ -225,7 +225,7 @@ angular.module('taxigoDriverApp', [
             }
         };
 
-        // cm : thực hiện show/hide history
+        // cm :done show / hide history
 
         $rootScope.switchHistory = function (status) {
             console.log('you Click history....', status);

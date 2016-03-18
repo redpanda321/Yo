@@ -3,10 +3,10 @@
 angular.module('taxigoDriverApp')
     .controller('toolBarCtrl', ['$scope', '$rootScope' , 'gmaps', '$timeout', 'auth', '$state', 'logger', function ($scope, $rootScope, gmaps, $timeout, auth, $state, logger) {
 
-        // Thoát khỏi ứng dụng
+        // Exit application
 
         $scope.logout = function () {
-            var confirm = window.confirm("希望出现?");
+            var confirm = window.confirm("要退出?");
             if (confirm == true) {
                 auth.logout(function (success) {
                     if (success) {
@@ -25,7 +25,7 @@ angular.module('taxigoDriverApp')
 
         };
 
-        /*Trỏ về vị trí hiện tại trên bản đồ*/
+        /*Point your current location on the map*/
 
 
         $scope.goToCenter = function () {

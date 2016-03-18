@@ -192,7 +192,9 @@ angular
                 for (var i = 0; i < $files.length; i++) {
                     var file = $files[i];
                     $rootScope.upload = $upload.upload({
-                        url: 'http://vsoft.vn:1235/upload', // upload.php script, node.js route, or servlet url
+                       // url: 'http://vsoft.vn:1235/upload', // upload.php script, node.js route, or servlet url
+                        url: 'http://54.187.5.33:6868/file-upload', // upload.php script, node.js route, or servlet url
+
                         method: 'POST', // or 'PUT',
 
                         data: {myObj: $rootScope.myModelObj},
