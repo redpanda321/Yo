@@ -37,7 +37,13 @@ angular.module('taxigoDriverApp')
                     /*gMaps.map = new google.maps.Map(document.getElementById('map'), {
                      zoom: 17,
                      center: new L.LatLng(21.029771, 105.801811)
-                     });*/
+                     });
+
+
+                     cordova plugin add https://github.com/Telerik-Verified-Plugins/Mapbox --variable ACCESS_TOKEN=pk.eyJ1IjoidGhpbmhudnYiLCJhIjoiZjQzYWM1ZDQ4YjNkNjc5YzQwZjA5OWIwNTNhZDNhODMifQ.53wH0q9UO48XrvK_TUESmg --save
+
+
+                     */
 
                     gMaps.map = L.map('map').setView([21.029771, 105.801811], 17);
 
