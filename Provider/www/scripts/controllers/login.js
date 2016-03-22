@@ -22,6 +22,12 @@ angular.module('taxigoDriverApp')
             window.socketIo.disconnect();
         }
 
+        $scope.register = function () {
+
+            $state.go('register');
+
+        };
+
         $scope.login = function (loginData) {
 
             $scope.loginProcess = true;

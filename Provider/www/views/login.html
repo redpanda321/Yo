@@ -4,14 +4,15 @@
 <div id="lock-screen" class="animated slideInLeft">
     <div id="lock-screen-content">
 
-        <img id="lock-screen-avatar"  class="img-responsive" src="./images/icon@2x.png"/>
+        <img id="lock-screen-avatar" class="img-responsive" src="./images/icon@2x.png" />
 
 
-        <div id="lock-screen-info"><h1>calgaryer.com</h1>
+        <div id="lock-screen-info">
+            <h1>司机登录</h1>
 
-            <div class="email">12070132@qq.com</div>
-
-
+            <!--
+                 <div class="email">12070132@qq.com</ div>
+            -->
             <!-- form login -->
             <form action="" class="mbm">
                 <div class="input-group">
@@ -25,14 +26,20 @@
 
                 </div>
                 <button type="button" class="btn btn-info" ng-click="login(customer)" ng-disabled="loginProcess">
-                    登录</button>
+                    登录
+                </button>
+
+                <button ng-click="register()" type="button" class="button button-energized">
+                    注册
+                </button>
+
             </form>
         </div>
     </div>
 
 </div>
 <style>
-    html, body{
-        position: relative!important;
+    html, body {
+        position: relative !important;
     }
 </style>

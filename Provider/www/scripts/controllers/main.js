@@ -151,7 +151,7 @@ angular.module('taxigoDriverApp')
                 if (status) {
                     driver.updateRoute(driver.getDirectionInfo()[0].id, 3, function (err, result) {
                         if (err) {
-                            showAlert('信息：坏消息，无法取消线路', '约约');
+                            showAlert('信息：无法取消线路', '约约');
                         } else {
 
                             //console.log('Destroy route ', result);
@@ -185,7 +185,7 @@ angular.module('taxigoDriverApp')
                             gmaps.map.panTo(gmaps.currentPoint.getLatLng());
 
 
-                            toastr.success('路线成功结束.');
+                            toastr.success('线路成功结束.');
 
                             $rootScope.acceptCustomer = false;
                             $rootScope.acceptCustomerStart = false;
@@ -201,7 +201,7 @@ angular.module('taxigoDriverApp')
                         if (window.confirm('您确定要取消这个线路?')) {
                             driver.updateRoute(driver.getDirectionInfo()[0].id, 4, function (err, result) {
                                 if (err) {
-                                    showAlert('信息：不好的消息，无法取消线路', '约约');
+                                    showAlert('信息：无法取消线路', '约约');
                                 } else {
 
                                     socketIo.emit('destroy:route', {

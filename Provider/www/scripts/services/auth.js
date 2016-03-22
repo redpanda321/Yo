@@ -74,9 +74,9 @@ angular.module('taxigoDriverApp')
                 clearUser: function () {
                     /*this.user = null;*/
                     //$cookieStore.put(_userKey, null);
-                    //$cookieStore.remove(_userKey);
+                     $cookieStore.remove(_userKey);
 
-                    localStorageService.set(_userKey, null);
+                    //localStorageService.set(_userKey, null);
                 },
 
                 /*
@@ -87,7 +87,7 @@ angular.module('taxigoDriverApp')
 
                 setUser: function (user) {
 
-                    //$cookieStore.put(_userKey, JSON.stringify(user));
+                    $cookieStore.put(_userKey, JSON.stringify(user));
 
                     //sessionStorage[_userKey] = JSON.stringify(user);
                     localStorageService.set(_userKey, user);
@@ -275,7 +275,7 @@ angular.module('taxigoDriverApp')
                         {
                             'method': 'POST',
                             'data': registerData,
-                            'url': appConfig.apiHost + '/registerCustomer'
+                            'url': appConfig.apiHost + '/registerDriver'
                         })
                         .success(function (data) {
                             /*console.log('data', data);*/

@@ -87,6 +87,13 @@ angular.module('taxigoDriverApp', [
                 controller: 'LoginCtrl'
             })
 
+            .state('register', {
+                url: '/register',
+                templateUrl: 'views/register.html',
+                controller: 'RegisterCtrl'
+            })
+
+
             .state('HistoryRoute', {
                 url: '/history',
                 templateUrl: 'views/Driver/driverHistory.html',

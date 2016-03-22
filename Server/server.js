@@ -30,7 +30,7 @@
 
 
     /*
-     (1) Thiết lập App
+     (1) Establish App
      */
 
     serverConfig = require('./config/init').serverConfig;
@@ -52,14 +52,14 @@
 
 
     /*
-     (3) Phân tích các Params URL được gửi lên (Loading Params)
+     (3)  Loading Params
      */
 
     Params = require('./crud/params').Params;
 
 
     /*
-     (4) Xác thực & Phân quyền URL đã request (Authentication & Authorization User)
+     (4) Authentication & Authorization User
      */
 
     _ref = require('./user/component'), passport = _ref.passport, User = _ref.User;
@@ -69,14 +69,14 @@
 
 
     /*
-     (5) Thực hiện ánh xạ CRUD với URL đã Request (Handle mapping CRUD with URL for request)
+     (5)  (Handle mapping CRUD with URL for request)
      */
 
     CrudApi = require('./crud/crud-api').CrudApi;
 
 
     /*
-     (6) Xử lý CRUD request với Adapters [MongoDB] (Handle CRUD request with Adapter [MongoDB])
+     (6)  (Handle CRUD request with Adapter [MongoDB])
      */
 
     MongooseDbProvider = require('./config/db-provider-mongo').MongooseDbProvider;
@@ -96,7 +96,7 @@
 
 
     /*
-     (7) Khởi tạo "CRUD API Server" với tất cả URL request ( Constructor "CRUD API Server" with for all URL)
+     (7)  ( Constructor "CRUD API Server" with for all URL)
 
      @param: MongooseDbProvider  6.1: Khai báo các Schemas Mongodb
      @param: MongooseCRUD        6.2: Thực hiện CRUD với MongoDB
@@ -142,7 +142,7 @@
 
 
     /*
-     (10) Khai báo Server (Declare the Server)
+     (10)  (Declare the Server)
      */
 
     app = express();
@@ -187,7 +187,7 @@
 
 
     /*
-     (13) Khai báo Router (Declare Router)
+     (13)  (Declare Router)
      */
 
 
