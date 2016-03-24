@@ -23,5 +23,8 @@
     "angular-ui-router": {
       "ignore": true
     }
+  },
+  "devDependencies": {
+    "platform.js": "platform#^1.3.1"
   }
 }
