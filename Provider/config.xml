@@ -2,17 +2,10 @@
 <widget defaultlocale="en-US" id="io.cordova.myapp37fa9479f98a49f4a53ab78472334b16" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps">
   <name>约约司机</name>
   <description>拼车，顺风车</description>
-<<<<<<< HEAD
   <author email="redpanda321@hotmail.com" href="http://www.calgaryer.com">Tony</author>
   <content src="index.html"/>
   <access origin="*"/>
   <vs:features/>
-=======
-  <author email="12070132@qq.com" href="http://www.calgaryer.com">Tony</author>
-  <content src="index.html"/>
-  <access origin="*"/>
-  <vs:features></vs:features>
->>>>>>> 5c848c18ee583453a38206fa6b3813c3b4b7cd2c
   <preference name="SplashScreen" value="screen"/>
   <preference name="windows-target-version" value="8.1"/>
   <preference name="windows-phone-target-version" value="8.1"/>
@@ -86,7 +79,6 @@
   <platform name="wp8">
     <splash height="800" src="res/screens/wp8/SplashScreenImage.jpg" width="480"/>
   </platform>
-<<<<<<< HEAD
   <plugin name="cordova-plugin-mapbox" spec="https://github.com/Telerik-Verified-Plugins/Mapbox.git">
     <variable name="ACCESS_TOKEN" value="pk.eyJ1IjoidGhpbmhudnYiLCJhIjoiZjQzYWM1ZDQ4YjNkNjc5YzQwZjA5OWIwNTNhZDNhODMifQ.53wH0q9UO48XrvK_TUESmg"/>
   </plugin>
@@ -104,21 +96,4 @@
   <plugin name="cordova-plugin-network-information" version="1.2.0"/>
   <plugin name="cordova-plugin-dialogs" version="1.2.0"/>
   <plugin name="cordova-plugin-dialogs" version="1.2.0"/>
-=======
-  <plugin name="cordova-plugin-console" version="1.0.2"/>
-  <plugin name="cordova-plugin-device" version="1.1.1"/>
-  <plugin name="cordova-plugin-splashscreen" version="3.1.0"/>
-  <plugin name="cordova-plugin-statusbar" version="2.1.2"/>
-  <plugin name="cordova-plugin-whitelist" version="1.2.1"/>
-  <plugin name="ionic-plugin-keyboard" version="1.0.8"/>
-  <plugin name="cordova-plugin-camera" version="2.1.1"/>
-  <plugin name="cordova-plugin-file" version="4.1.1"/>
-  <plugin name="cordova-plugin-file-transfer" version="1.5.0"/>
-  <plugin name="cordova-plugin-geolocation" version="2.1.0"/>
-  <plugin name="cordova-plugin-globalization" version="1.0.3"/>
-  <plugin name="cordova-plugin-network-information" version="1.2.0"/>
-  <plugin name="cordova-plugin-mapbox" spec="https://github.com/Telerik-Verified-Plugins/Mapbox">
-    <variable name="ACCESS_TOKEN" value="pk.eyJ1IjoidGhpbmhudnYiLCJhIjoiZjQzYWM1ZDQ4YjNkNjc5YzQwZjA5OWIwNTNhZDNhODMifQ.53wH0q9UO48XrvK_TUESmg"/>
-  </plugin>
->>>>>>> 5c848c18ee583453a38206fa6b3813c3b4b7cd2c
 </widget>

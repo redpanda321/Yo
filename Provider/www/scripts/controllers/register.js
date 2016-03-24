@@ -47,7 +47,7 @@ angular.module('taxigoDriverApp')
                                       
 
                                         $timeout(function () {
-                                            _loading.hide();
+                                           
                                         }, 500);
 
                                         //$scope.loginMessage = 'Đăng nhập thất bại !. </br> Vui lòng thử lại';
@@ -55,7 +55,7 @@ angular.module('taxigoDriverApp')
                                       
 
                                         $timeout(function () {
-                                            _loading.hide();
+                                           
                                         }, 500);
 
                                         $rootScope.isLogin = true;
@@ -70,7 +70,7 @@ angular.module('taxigoDriverApp')
                                 $scope.registerProcess  = false;
                                 switch (result.message) {
                                     case 'REGISTER.ERR.REGISTED':
-                                        winodw.toastr.success('你的设备已经注册过 !');
+                                        window.toastr.success('你的设备已经注册过 !');
                                         break;
 
                                     case 'REGISTER.ERR.USERNAME':

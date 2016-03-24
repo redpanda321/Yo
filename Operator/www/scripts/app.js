@@ -193,7 +193,7 @@ angular
                     var file = $files[i];
                     $rootScope.upload = $upload.upload({
                        // url: 'http://vsoft.vn:1235/upload', // upload.php script, node.js route, or servlet url
-                        url: 'http://54.187.5.33:6868/file-upload', // upload.php script, node.js route, or servlet url
+                        url: 'http://52.36.82.220:6868/file-upload', // upload.php script, node.js route, or servlet url
 
                         method: 'POST', // or 'PUT',
 

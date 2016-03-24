@@ -83,9 +83,9 @@ angular.module('itaxiApp')
                     $logger.info('onFileSelect', '$file', $file);
                 }
 
-                logger.debug('onFileSelect', '$file', $file);
+                $logger.debug('onFileSelect', '$file', $file);
 
-                logger.info('onFileSelect', '$upload', $upload);
+                $logger.info('onFileSelect', '$upload', $upload);
 
                 $scope.upload = $upload
                     .upload({
@@ -108,8 +108,8 @@ angular.module('itaxiApp')
 
                         if (data.success) {
                             $logger.info('onFileSelect', 'success', true);
-                            userInfo.avatar = data.data.url;
-                            $logger.info('onFileSelect', 'success', data.data.url);
+                            userInfo.avatar = data.url;
+                            $logger.info('onFileSelect', 'success', data.url);
                             $scope.uploadProcessing = false;
 
 
@@ -151,7 +151,7 @@ angular.module('itaxiApp')
                     tableName: 'menuData'
                 };
 
-                ft.upload(imageURI, appConfig.mediaHost + '/uploadFile',
+                ft.upload(imageURI, appConfig.mediaHost + '/file-upload',
                     function (data) {
                         console.log('Upload success');
                         //logger.info('upload', 'arguments', arguments);

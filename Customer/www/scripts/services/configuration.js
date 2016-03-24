@@ -6,10 +6,10 @@ angular.module('itaxiApp')
         var config = {
             deviceId: (window.device) ? device.uuid : 'vsoft.deverlopment12333',
             defaultPass: 'defaultPassword',
-            name: 'YoYo',
+            name: '????',
             //apiHost: 'http://taxigo.vn:9989',
-            apiHost: 'http://54.187.5.33:6868',
-            mediaHost: 'http://54.187.5.33:6868',
+            apiHost: 'http://52.36.82.220:6868',
+            mediaHost: 'http://52.36.82.220:6868',
             isLogin: false
         };
 

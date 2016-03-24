@@ -5,7 +5,7 @@
  */
 
 (function (exports) {
-    var remoteHost = 'http://54.187.5.33:6868';          
+    var remoteHost = 'http://52.36.82.220:6868';
     var isMobile = {
         Android: function() {
             return navigator.userAgent.match(/Android/i);
@@ -32,7 +32,8 @@
         appName: 'TaxiGo',
         apiHost: remoteHost,
         mediaHost: remoteHost,
-        socketIoUrl: remoteHost + '/socket.io/socket.io.js'
+        socketIoUrl: remoteHost + '/socket.io/socket.io.js',
+        deviceId: (window.device) ? device.uuid : 'vsoft.deverlopment12334'
     };
 
     exports.isMobile = isMobile;
