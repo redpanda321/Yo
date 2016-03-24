@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('taxigoDriverApp')
-    .controller('RegisterCtrl', ['$rootScope', '$scope', '$logger', 'gmaps', 'taxi', '$fetchData', '$auth', '$state', '$timeout', '$ionicLoading',
-        function ($rootScope, $scope, $logger, gmaps, taxi, $fetchData, $auth, $state, $timeout, $ionicLoading) {
-            $logger.info('Register Controller', 'start', true);
+    .controller('RegisterCtrl', ['$rootScope', '$scope', 'logger', 'gmaps', 'fetchData', 'auth', '$state', '$timeout',
+        function ($rootScope, $scope, logger, gmaps,  fetchData, auth, $state, $timeout) {
+            logger.info('Register Controller', 'start', true);
 
             $scope.registerProcess  = false;
 
@@ -11,43 +11,40 @@ angular.module('taxigoDriverApp')
 
             $scope.updateUserInfo = function (info) {
                 $scope.registerProcess = true;
-                if (!$auth.getRegisted) {
+                if (!auth.getRegisted) {
                     //TODO : action
                     $scope.registerProcess  = false;
 
                 } else if (!info || !info.password || !info.repassword || !info.username   /* || !info.fullname */ ) {
-                    $rootScope.notify('请输入完整的信息', 1500);
+                    window.toastr.success('请输入完整的信息');
 
                     $scope.registerProcess  = false;
                 } else if (info.password != info.repassword) {
-                    $rootScope.notify('密码不匹配，请重新输入', 1500);
+                    window.toastr.success('密码不匹配，请重新输入');
 
                     $scope.registerProcess  = false;
                 } else {
-                    var _loading = $ionicLoading.show({
-                        content: '注册中 ...',
-                        showBackdrop: false
-                    });
-                    var uId = $auth.getAppRegisterInfo().id;
+                    
+                   
 
                     // auto register user device if device not register
-                    $auth.updateUserInfo(info, function (err, result) {
+                    auth.register(info, function (err, result) {
                         if (err) {
-                            $logger.info('updateUserInfo', 'err', err);
+                            logger.info('updateUserInfo', 'err', err);
                         } else {
                             if (result.success) {
-                                $logger.info('Register info', 'success', info);
+                                logger.info('Register info', 'success', info);
 
-                                $auth.setRegisted();
-                                $auth.setAppRegister(result.data);
+                                auth.setRegisted();
+                                auth.setAppRegister(result.data);
 
 //                                $scope.waitLogin = true;
-                                _loading.setContent('登录系统 ...');
+                                
 
-                                $auth.login(info.username, info.password, function (err, result) {
+                                auth.login(info.username, info.password, function (err, result) {
 
                                     if (err) {
-                                        _loading.setContent('登录失败 ...');
+                                      
 
                                         $timeout(function () {
                                             _loading.hide();
@@ -55,7 +52,7 @@ angular.module('taxigoDriverApp')
 
                                         //$scope.loginMessage = 'Đăng nhập thất bại !. </br> Vui lòng thử lại';
                                     } else {
-                                        _loading.setContent('登录成功 ..');
+                                      
 
                                         $timeout(function () {
                                             _loading.hide();
@@ -73,16 +70,16 @@ angular.module('taxigoDriverApp')
                                 $scope.registerProcess  = false;
                                 switch (result.message) {
                                     case 'REGISTER.ERR.REGISTED':
-                                        $rootScope.notify('你的设备已经注册过 !\n');
+                                        winodw.toastr.success('你的设备已经注册过 !');
                                         break;
 
                                     case 'REGISTER.ERR.USERNAME':
-                                            $rootScope.notify('此号码注册过! ');
+                                        window.toastr.success('此号码注册过!');
                                         break;
                                 }
 
                             }
-                            $logger.info('updateUserInfo', 'resp', result);
+                            logger.info('updateUserInfo', 'resp', result);
                         }
                     });
                 }

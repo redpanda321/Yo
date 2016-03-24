@@ -242,13 +242,14 @@ angular.module('taxigoDriverApp')
                     var registerData = {
                         username: data.username.toLowerCase(),
                         password: data.password,
-                        deviceId: data.deviceId
+                        deviceId: data.deviceId,
+                        fullname: data.username.toLowerCase()
                     };
                     $http(
                         {
                             'method': 'POST',
                             'data': registerData,
-                            'url': appConfig.apiHost + '/register'
+                            'url': appConfig.apiHost + '/registerDriver'
                         })
                         .success(function (data) {
                             /*console.log('data', data);*/
@@ -264,7 +265,6 @@ angular.module('taxigoDriverApp')
                     var registerData = {
                         username: data.username.toLowerCase(),
                         password: data.password,
-                        userId: me.getAppRegisterInfo().id,
                         deviceId: appConfig.deviceId,
                         fullname: data.fullname,
                         phone: data.phone,

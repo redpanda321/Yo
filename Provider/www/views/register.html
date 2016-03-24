@@ -21,31 +21,38 @@
 
         -->
 
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">手机号</span>
-                <input type="tel" placeholder="4038888888" ng-model="registerData.username">
-            </label>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">密码</span>
-                <input type="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;" ng-model="registerData.password">
-            </label>
+            <form action="" class="mbm">
 
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">
-                    密码
-                </span>
-                <input type="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;" ng-model="registerData.repassword">
-            </label>
+                <div class="input-group">
+                    <span class="input-label">手机号</span>
+                    <input type="tel" placeholder="4038888888" ng-model="registerData.username">
+                </div>
 
-            <!--<label class="item item-input item-stacked-label">
+                <div class="input-group">
+                    <span class="input-label">密码</span>
+                    <input type="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;" ng-model="registerData.password">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-label">
+                        密码
+                    </span>
+                    <input type="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;" ng-model="registerData.repassword">
+                </div>
+
+                <!--<label class="item item-input item-stacked-label">
             <span class="input-label">Địa chỉ</span>
             <input type="text" type="text" placeholder="Từ liêm , Hà Nội"  ng-model="registerData.location">
         </label>-->
-            <!--<label class="item item-input item-stacked-label">
+                <!--<label class="item item-input item-stacked-label">
             <span class="input-label">Ngày sinh</span>
             <input type="date" placeholder="20/10/1990"  ng-model="registerData.birthday">
         </label>-->
 
+                <button type="button" class="btn btn-info" ng-click="updateUserInfo(registerData)" ng-disabled="registerProcess">注册</button>
+
+
+            </form>
 
         </div>
 
@@ -53,10 +60,8 @@
     </div>
 
 </div>
-<div style="padding: 0 10px;">
-    <button class="button button-block button-positive" ng-click="updateUserInfo(registerData)" ng-disabled="registerProcess">注册</button>
-</div>
 
+   
 
 <style>
     html, body {
