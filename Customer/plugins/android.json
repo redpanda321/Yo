@@ -35,6 +35,18 @@
                         {
                             "xml": "<feature name=\"FileTransfer\"><param name=\"android-package\" value=\"org.apache.cordova.filetransfer.FileTransfer\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" value=\"org.apache.cordova.statusbar.StatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Globalization\"><param name=\"android-package\" value=\"org.apache.cordova.globalization.Globalization\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -119,6 +131,15 @@
             "PACKAGE_NAME": "io.cordova.myapp37fa9479f98a49f4a53ab78472334b16"
         },
         "cordova-plugin-file": {
+            "PACKAGE_NAME": "io.cordova.myapp37fa9479f98a49f4a53ab78472334b16"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "io.cordova.myapp37fa9479f98a49f4a53ab78472334b16"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "io.cordova.myapp37fa9479f98a49f4a53ab78472334b16"
+        },
+        "cordova-plugin-globalization": {
             "PACKAGE_NAME": "io.cordova.myapp37fa9479f98a49f4a53ab78472334b16"
         }
     },
