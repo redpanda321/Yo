@@ -712,7 +712,7 @@ angular.module('itaxiApp')
                 $scope.modalInput.hide();
             };
 
-            /*
+            
 
              $ionicModal.fromTemplateUrl('./views/states/child/go-to.html', {
              scope: $scope,
@@ -745,7 +745,7 @@ angular.module('itaxiApp')
              $scope.modalFromTo.hide();
              };
 
-             */
+             
 
             $scope.listHistory = [];
             var loadHistory = function () {
