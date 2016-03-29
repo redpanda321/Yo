@@ -240,6 +240,12 @@ angular.module('itaxiApp')
 
                 $restful.put({table: 'Users', id: $auth.getAppRegisterInfo().id}, userInfo, function (resp) {
                     $logger.info('updateRoute', 'resp', resp);
+
+                    $logger.info('updateRoute', 'id', $auth.getAppRegisterInfo().id);
+
+                    $logger.info('updateRoute', 'birthday', userInfo.birthday);
+
+
                     if (resp.success) {
 
                         $logger.info('saveUserInfo', 'success', resp.data);

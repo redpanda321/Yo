@@ -130,7 +130,7 @@ angular.module('itaxiApp')
                     $ionicPopup.show({
                         templateUrl: 'views/utils/getPhoneNumber.html',
                         title: '请输入手机号',
-                        subTitle: '(输入开头数字)',
+                        subTitle: '(请输入数字)',
                         scope: $scope,
                         buttons: [
                             { text: '取消', onTap: function (e) {

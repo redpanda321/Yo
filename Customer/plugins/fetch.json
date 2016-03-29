@@ -91,7 +91,7 @@
     "cordova-plugin-statusbar": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-statusbar"
+            "id": "cordova-plugin-statusbar@2.1.2"
         },
         "is_top_level": true,
         "variables": {}
@@ -99,7 +99,7 @@
     "cordova-plugin-dialogs": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-dialogs"
+            "id": "cordova-plugin-dialogs@1.2.0"
         },
         "is_top_level": true,
         "variables": {}
@@ -107,7 +107,7 @@
     "cordova-plugin-globalization": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-globalization"
+            "id": "cordova-plugin-globalization@1.0.3"
         },
         "is_top_level": true,
         "variables": {}

@@ -20,6 +20,9 @@ angular.module('itaxiApp')
                 // get User id from AppRegisterInfo
 
                 var userId = $auth.getAppRegisterInfo().id;
+                $logger.info('History Controller', 'userId', userId);
+
+
                 // filter
                 var filter = [
                     {

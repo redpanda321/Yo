@@ -24,8 +24,11 @@ angular.module('taxigoDriverApp')
 
                     $scope.registerProcess  = false;
                 } else {
-                    
-                   
+
+
+                    var uId = auth.getAppRegisterInfo().id;
+
+                    logger.info('register', 'AppRegisterInfo uId', uId);
 
                     // auto register user device if device not register
                     auth.register(info, function (err, result) {

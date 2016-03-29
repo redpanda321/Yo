@@ -19,7 +19,7 @@ angular.module('itaxiApp')
                             endPoint: gmaps.directionInfo.legs[0].end_address,
                             duration: gmaps.directionInfo.legs[0].duration.value,
                             distance: gmaps.directionInfo.legs[0].distance.value,
-                            amount: (gmaps.directionInfo.legs[0].distance.value / 1000) * 12000
+                            amount: (gmaps.directionInfo.legs[0].distance.value / 1000) * 5
                         };
 
                     } else {
