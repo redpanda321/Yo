@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('itaxiApp')
-    .controller('SettingCtrl', ['$scope', '$rootScope', '$logger', 'gmaps', 'taxi', '$fetchData', '$auth', '$ionicActionSheet', 'appConfig', '$upload', '$restful', '$ionicLoading',
-        function ($scope, $rootScope, $logger, gmaps, taxi, $fetchData, $auth, $ionicActionSheet, appConfig, $upload, $restful, $ionicLoading) {
+    .controller('SettingCtrl', ['$scope', '$rootScope', '$logger', 'gmaps', 'taxi', '$fetchData', '$auth', '$ionicActionSheet', 'appConfig', '$upload', '$restful', '$ionicLoading', '$filter',
+        function ($scope, $rootScope, $logger, gmaps, taxi, $fetchData, $auth, $ionicActionSheet, appConfig, $upload, $restful, $ionicLoading,$filter) {
             $logger.info('Setting Controller', 'start', true);
 
             //get User from $auth
@@ -11,6 +11,14 @@ angular.module('itaxiApp')
                 if(!err){
                     $logger.info('getUserInfoById', 'success', result);
                     $scope.UserInfo = result;
+
+
+                    $scope.UserInfo.birthday = $filter('date')(result.birthday, 'yyyy-MM-dd');
+                        
+
+
+
+
                 }else {
                     $logger.info('getUserInfoById', 'success', false);
                 }
@@ -226,6 +234,13 @@ angular.module('itaxiApp')
             // save user information (API document)
 
             $scope.saveUserInfo = function (userInfo) {
+
+
+               
+
+                $logger.info('userInfo', 'birthday', userInfo.birthday);
+
+
                 $scope.disableButtonSave = true;
                 $ionicLoading.show({
                     content: '请稍等 ..',
@@ -236,6 +251,10 @@ angular.module('itaxiApp')
 
                 delete userInfo.hash;
                 delete userInfo.salt;
+
+
+                
+                console.log('saveUserInfo');
 
 
                 $restful.put({table: 'Users', id: $auth.getAppRegisterInfo().id}, userInfo, function (resp) {
@@ -253,6 +272,9 @@ angular.module('itaxiApp')
 
                         $auth.setAppRegister(resp.data);
                         $scope.UserInfo = resp.data;
+
+                        $scope.UserInfo.birthday = $filter('date')(resp.data.birthday, 'yyyy-MM-dd');
+
                         $rootScope.currentUserInfo = resp.data;
 
 
