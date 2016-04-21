@@ -315,11 +315,9 @@ angular.module('itaxiApp')
                                     me.directionInfo = routes;
 
                                     $rootScope.bookmarked = false;
-<<<<<<< HEAD
-                                    $rootScope.infoRouter = '估计: ' + routes.legs[0].distance.text + ' - ' + Math.round(routes.legs[0].distance.value / 1000) * 5 + '￥';
-=======
+
                                     $rootScope.infoRouter = '估计: ' + routes.legs[0].distance.text + ' - ' + Math.round(routes.legs[0].distance.value / 1000) * 5  + '人民币（元）';
->>>>>>> c5f7a774f8cbeda3e860eb52346696b8edb78726
+
 
                                     $rootScope.showStatus($rootScope.infoRouter);
                                     var point, route, points = [];
@@ -397,11 +395,9 @@ angular.module('itaxiApp')
 
                                             $rootScope.distanceCheck = routes.legs[0].distance.value;
                                             if (!$rootScope.status.hasRouter) {
-<<<<<<< HEAD
-                                                $rootScope.pageTitleCalu = '估计: ' + routes.legs[0].distance.text + ' - ' + Math.round(routes.legs[0].distance.value / 1000) * 5 + ' 元';
-=======
+
                                                 $rootScope.pageTitleCalu = '估计: ' + routes.legs[0].distance.text + ' - ' + Math.round(routes.legs[0].distance.value / 1000) * 5 + ' 人民币（元）';
->>>>>>> c5f7a774f8cbeda3e860eb52346696b8edb78726
+
                                             }
 
                                             $rootScope.stepDirection = routes.legs[0].steps;

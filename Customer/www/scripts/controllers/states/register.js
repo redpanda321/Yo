@@ -15,11 +15,8 @@ angular.module('itaxiApp')
                     //TODO : action
                     $scope.registerProcess  = false;
 
-<<<<<<< HEAD
+
                 } else if (!info || !info.password || !info.repassword || !info.username  /*|| !info.fullname */ ) {
-=======
-                } else if (!info || !info.password || !info.repassword || !info.username  /* || !info.fullname */) {
->>>>>>> c5f7a774f8cbeda3e860eb52346696b8edb78726
                     $rootScope.notify('请输入完整的信息', 1500);
 
                     $scope.registerProcess  = false;

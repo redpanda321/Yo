@@ -14,17 +14,11 @@ angular.module('itaxiApp')
 
 
             $scope.listTaxiGroup = [
-<<<<<<< HEAD
+
                 {logo: './images/mailinh.png', group: 'Taxi Mai Linh', call: '0438222666', star: 5.0, firstKm: '9.000', secondKm: '12.000'},
                 {logo: './images/basao.jpg', group: 'Taxi Ba Sao – Morning', call: '0432202020', star: 4.8, firstKm: '9000', secondKm: '12000'}
 
                         ];
-=======
-               
-                {logo: './images/logo-itaxi-new.png', group: 'YoYo Group', call: '4038183581', star: 4.5, firstKm: '5', secondKm: '5'}
-            ];
->>>>>>> c5f7a774f8cbeda3e860eb52346696b8edb78726
-
 
             /*
 
