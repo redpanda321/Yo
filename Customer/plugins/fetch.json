@@ -19,7 +19,7 @@
     "cordova-plugin-device": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-device"
+            "id": "cordova-plugin-device@1.1.1"
         },
         "is_top_level": true,
         "variables": {}
@@ -67,15 +67,15 @@
     "cordova-plugin-file": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-file@4.1.1"
+            "id": "cordova-plugin-file"
         },
-        "is_top_level": true,
+        "is_top_level": false,
         "variables": {}
     },
     "cordova-plugin-network-information": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-network-information"
+            "id": "cordova-plugin-network-information@1.2.0"
         },
         "is_top_level": true,
         "variables": {}
@@ -110,6 +110,14 @@
             "id": "cordova-plugin-globalization@1.0.3"
         },
         "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-compat": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-compat"
+        },
+        "is_top_level": false,
         "variables": {}
     }
 }
