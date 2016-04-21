@@ -15,8 +15,10 @@ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.
 
 cordova build --release android
 
-keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
+keytool -genkey -v -keystore my-release-key1.keystore -alias alias_name1 -keyalg RSA -keysize 2048 -validity 10000
 
-jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore ./platforms/android/build/outputs/apk/android-release-unsigned.apk  alias_name
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key1.keystore ./platforms/android/build/outputs/apk/android-release-unsigned.apk  alias_name1
 
-/Users/tony/Library/Android/sdk/build-tools/23.0.2/zipalign  -v 4 ./platforms/android/build/outputs/apk/android-release-unsigned.apk yoyo.apk
+/Users/tony/Library/Android/sdk/build-tools/23.0.2/zipalign  -v 4 /Users/tony/Documents/demo/yo/Customer/platforms/android/build/outputs/apk/android-release-unsigned.apk yoyo.apk
+
+
