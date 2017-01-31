@@ -5,7 +5,7 @@
  */
 
 (function (exports) {
-    var remoteHost = 'http://52.36.82.220:6868';
+    var remoteHost = 'http://www.weiyou7.com:6868';
     var isMobile = {
         Android: function() {
             return navigator.userAgent.match(/Android/i);

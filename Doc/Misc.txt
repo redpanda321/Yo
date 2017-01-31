@@ -15,6 +15,8 @@ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.
 
 cordova build --release android
 
+
+
 keytool -genkey -v -keystore my-release-key1.keystore -alias alias_name1 -keyalg RSA -keysize 2048 -validity 10000
 
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key1.keystore ./platforms/android/build/outputs/apk/android-release-unsigned.apk  alias_name1
@@ -22,8 +24,14 @@ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key1
 /Users/tony/Library/Android/sdk/build-tools/23.0.2/zipalign  -v 4 /Users/tony/Documents/demo/yo/Customer/platforms/android/build/outputs/apk/android-release-unsigned.apk yoyo.apk
 
 
-c:\Android\sdk\build-tools\23.0.2\zipalign  -v 4 c:\temp\demo\yo\Customer\platforms\android\build\outputs\apk\android-release-unsigned.apk yoyo.apk
+"C:\Program Files (x86)\Java\jdk1.6.0_45\bin\keytool.exe"  -genkey -v -keystore my-release-key1.keystore -alias alias_name1 -keyalg RSA -keysize 2048 -validity 10000
 
+"C:\Program Files (x86)\Java\jdk1.6.0_45\bin\jarsigner.exe"  -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key1.keystore ./platforms/android/build/outputs/apk/android-release-unsigned.apk  alias_name1
+
+
+"C:\Program Files (x86)\Android\android-sdk\build-tools\23.0.2\zipalign.exe" -v 4 c:\data\temp\demo\Yo\Customer\platforms\android\build\outputs\apk\android-release-unsigned.apk yoyo.apk
+
+"C:\Program Files (x86)\Android\android-sdk\build-tools\23.0.2\zipalign.exe" -v 4 c:\data\temp\demo\Yo\Provider\platforms\android\build\outputs\apk\android-release-unsigned.apk yoyo.apk
 
 
 

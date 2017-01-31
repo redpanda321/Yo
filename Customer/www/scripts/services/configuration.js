@@ -8,8 +8,8 @@ angular.module('itaxiApp')
             defaultPass: 'defaultPassword',
             name: '????',
             //apiHost: 'http://taxigo.vn:9989',
-            apiHost: 'http://52.36.82.220:6868',
-            mediaHost: 'http://52.36.82.220:6868',
+            apiHost: 'http://www.weiyou7.com:6868',
+            mediaHost: 'http://www.weiyou7.com:6868',
             isLogin: false
         };
 
